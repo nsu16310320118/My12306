@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_book"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/book" />
+
+    <item
+        android:id="@+id/navigation_service"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/service" />
+
+    <item
+        android:id="@+id/navigation_orderInquiry"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/orderInquiry" />
+    <item
+        android:id="@+id/navigation_my12306"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/mine"/>
+</menu>

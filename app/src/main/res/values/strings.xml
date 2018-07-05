@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My12306</string>
+    <string name="book">车票预订</string>
+    <string name="service">商旅服务</string>
+    <string name="orderInquiry">订单查询</string>
+    <string name="mine">我的12306</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="22sp"
+                tools:text="、、" />
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="手机核验"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/insurance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="我的保险"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/food"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="我的餐饮·特产"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/easyTrain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="铁路畅行"
+                android:layout_marginTop="20dp"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="出行导航"
+                android:layout_marginTop="20dp"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/goodService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="温馨服务"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/messageService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="信息服务"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/havefun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="旅行休闲"
+                android:layout_marginTop="20dp"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/dataup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="1"
+                android:layout_marginTop="20dp"
+                android:text="基础数据更新"
+                android:textSize="22sp" />
+            <TextView
+                android:id="@+id/system_inform"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="系统通知"
+                android:textSize="22sp" />
+            <TextView
+                android:id="@+id/regard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="关于"
+                android:textSize="22sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

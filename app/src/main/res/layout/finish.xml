@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/today"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#DCDCDC"
+        android:text="当日时间"
+        android:textAlignment="gravity"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/unGo"
+        android:layout_width="371dp"
+        android:layout_height="29dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="88dp"
+        android:text="    未出行订单"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="128dp"
+        android:text="    历史订单"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/todayOrder"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/today"
+        android:text="    今日订单 "
+        android:textSize="18sp" />
+</RelativeLayout>
