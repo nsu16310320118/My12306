@@ -19,6 +19,7 @@ private mypagerAdapter mypagerAdapter;
 private orderInquiry_fragment orderInquiryFragment;
 private mineFragment mineFragment;
 private ArrayList<Fragment> fragments;
+private MenuItem menuItem;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -45,7 +46,7 @@ private ArrayList<Fragment> fragments;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        final BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         viewPager=findViewById(R.id.viewPager);
 
         fragments=new ArrayList<Fragment>();
@@ -61,6 +62,28 @@ private ArrayList<Fragment> fragments;
         viewPager.setAdapter(mypagerAdapter);
         viewPager.setCurrentItem(0);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                    if(menuItem!=null){
+                        menuItem.setChecked(false);
+                    }else{
+                        navigation.getMenu().getItem(0).setChecked(false);
+                    }
+                    menuItem=navigation.getMenu().getItem(position);
+                    menuItem.setChecked(true);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
 }
