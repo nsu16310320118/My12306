@@ -33,7 +33,7 @@ private SQLiteDatabase mydatabase;
         agree=findViewById(R.id.agree);
         next=findViewById(R.id.next);
         db=new myDatabase(this,"UserMessage.db",null,1);
-        mydatabase=db.getWritableDatabase();
+        mydatabase=db.getReadableDatabase();
         //-----------------------------------
         passengerType.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -21,6 +21,14 @@ private CheckBox remember;
 private String userName,passWord;
 private myDatabase myDatabase;
 private SQLiteDatabase db;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        textUserName.setText(data.getStringExtra(""));
+        textPassword.setText(data.getStringExtra(""));
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +41,8 @@ private SQLiteDatabase db;
         forget=findViewById(R.id.forget);
         myDatabase=new myDatabase(this,"UserMessage.db",null,1);
         db=myDatabase.getReadableDatabase();
+        userName=textUserName.getText().toString();
+        passWord=textPassword.getText().toString();
         //--------------------------
         forget.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,10 +57,11 @@ private SQLiteDatabase db;
                 startActivity(intent);
             }
         });//跳转到忘记密码界面
+
         login.setOnClickListener(new View.OnClickListener() {
             boolean isin=false;
-            private String strUserName=textUserName.getText().toString();
-            private String strPassWord=textPassword.getText().toString();
+//            private String strUserName=textUserName.getText().toString();
+//            private String strPassWord=textPassword.getText().toString();
             @Override
             public void onClick(View view) {
                 //跳转到主界面
@@ -58,12 +69,14 @@ private SQLiteDatabase db;
                     textUserName.setError("输入用户名为空");
                     textUserName.requestFocus();
                 }
-                if(TextUtils.isEmpty(passWord)){
+                else if(TextUtils.isEmpty(passWord)){
                     textPassword.setError("输入密码为空");
                     textPassword.requestFocus();
                 }
-                Intent intent=new Intent(Login_Activity.this,MainActivity.class);
-                startActivity(intent);
+                else {
+                    Intent intent = new Intent(Login_Activity.this, MainActivity.class);
+                    startActivity(intent);
+                }
 //                isin=ifitInDB(strUserName,strPassWord);
 //                if(isin){
 //                    //用户存在于数据库内，跳转到主界面

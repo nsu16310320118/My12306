@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/startTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="起始时间"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/endTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/startTime"
+        android:ems="10"
+        android:hint="结束时间"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/train_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/endTime"
+        android:ems="10"
+        android:hint="车次"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/passengerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/train_number"
+        android:ems="10"
+        android:hint="乘客姓名"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/orderNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/passengerName"
+        android:ems="10"
+        android:hint="订单号"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/quiry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="查询" />
+</RelativeLayout>

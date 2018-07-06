@@ -18,16 +18,26 @@
         <activity
             android:name=".forgetPwd_Activity"
             android:label="忘记密码" />
-        <activity android:name=".Splash" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+        <activity android:name=".Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="车票预订">
-        </activity>
+            android:label="车票预订" />
+        <activity
+            android:name=".dataChoose"
+            android:label="选择日期" />
+        <activity
+            android:name=".today_s_order"
+            android:label="今日已完成订单" />
+        <activity
+            android:name=".historyOrder"
+            android:label="历史订单" />
+        <activity android:name=".unGo"></activity>
     </application>
 
 </manifest>
