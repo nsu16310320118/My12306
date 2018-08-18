@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".warmprompt">
+
+    <TextView
+        android:id="@+id/serveCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="22dp"
+        android:text="服务查询"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/lostCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/serveCheck"
+        android:text="遗失物品查找"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/VIPorder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lostCheck"
+        android:text="重点旅客预约"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/complaint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/VIPorder"
+        android:text="投诉"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/advise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/complaint"
+        android:text="建议"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/servePhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/advise"
+        android:text="服务电话查询"
+        android:textSize="22sp" />
+</RelativeLayout>

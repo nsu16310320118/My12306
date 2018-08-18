@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".userMes">
+
+    <TextView
+        android:id="@+id/usually_use"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="23dp"
+        android:text="常用联系人"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/ticket_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/usually_use"
+        android:text="送票地址"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/myMes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ticket_add"
+        android:text="个人资料"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/Notification Settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/myMes"
+        android:text="通知设置"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/pwdChange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Notification Settings"
+        android:text="密码修改"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/emailChange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/pwdChange"
+        android:text="邮箱修改"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="退出当前用户" />
+</RelativeLayout>

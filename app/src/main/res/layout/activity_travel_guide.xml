@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Travel_guide">
+
+    <TextView
+        android:id="@+id/timeCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:text="正晚点查询"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/trainCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/timeCheck"
+        android:text="车次查询"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/fareCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/trainCheck"
+        android:text="票价查询"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/outletsCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/fareCheck"
+        android:text="代售点查询"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/stationCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/outletsCheck"
+        android:text="车站车次查询"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/saleCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/stationCheck"
+        android:text="起售时间查询"
+        android:textSize="22sp" />
+</RelativeLayout>

@@ -18,13 +18,7 @@
         <activity
             android:name=".forgetPwd_Activity"
             android:label="忘记密码" />
-        <activity android:name=".Splash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Splash" />
         <activity
             android:name=".MainActivity"
             android:label="车票预订" />
@@ -37,7 +31,18 @@
         <activity
             android:name=".historyOrder"
             android:label="历史订单" />
-        <activity android:name=".unGo"></activity>
+        <activity android:name=".unGo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".userMes" />
+        <activity android:name=".phoneCheck" />
+        <activity android:name=".myinsurance" />
+        <activity android:name=".Travel_guide" />
+        <activity android:name=".warmprompt"></activity>
     </application>
 
 </manifest>
