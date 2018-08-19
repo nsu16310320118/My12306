@@ -1,0 +1,13 @@
+package com.example.administrator.my12306;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class trainCheck extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_train_check);
+    }
+}
