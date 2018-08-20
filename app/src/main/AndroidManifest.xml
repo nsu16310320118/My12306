@@ -42,7 +42,21 @@
         <activity android:name=".phoneCheck" />
         <activity android:name=".myinsurance" />
         <activity android:name=".Travel_guide" />
-        <activity android:name=".warmprompt"></activity>
+        <activity android:name=".warmprompt" />
+        <activity android:name=".usually" />
+        <activity android:name=".personal_data" />
+        <activity android:name=".pwdChange" />
+        <activity android:name=".mailChange" />
+        <activity android:name=".timeCheck" />
+        <activity android:name=".trainCheck" />
+        <activity android:name=".fareCheck_not_do" />
+        <activity android:name=".outletsCheck" />
+        <activity android:name=".stationCheck_unfinished" />
+        <activity android:name=".saleCheck" />
+        <activity android:name=".serverCheck" />
+        <activity android:name=".lostCheck_be" />
+        <activity android:name=".lostCheck" />
+        <activity android:name=".advise"></activity>
     </application>
 
 </manifest>

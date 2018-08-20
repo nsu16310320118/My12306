@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".lostCheck">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/passengerMes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="旅客信息"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/passenger"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="乘车人 请选择乘车人"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/takeMes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="乘车信息 请选择乘车信息"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="性别"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="联系电话"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/idType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="证件类型"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/idNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="证件号码"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="乘车日期"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/trainNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="车次"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/goStation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="乘车站"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/endStation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="到站"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/carriageNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="车厢号"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/seatNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="座位号"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/lostMes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="遗失物品信息"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/whereLost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="遗失地点 车站/列车"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="遗失位置"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="其他描述"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/upload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="上传" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
