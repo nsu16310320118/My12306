@@ -52,7 +52,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/phoneNumber"
+                android:id="@+id/phoneNumber_lost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -61,7 +61,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/idType"
+                android:id="@+id/idType_lost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -70,7 +70,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/idNumber"
+                android:id="@+id/idNumber_lost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -159,7 +159,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/other"
+                android:id="@+id/other_lost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -168,7 +168,7 @@
                 android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/upload"
+                android:id="@+id/upload_lost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

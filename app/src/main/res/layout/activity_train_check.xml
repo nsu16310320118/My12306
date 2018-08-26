@@ -7,30 +7,32 @@
     tools:context=".trainCheck">
 
     <EditText
-        android:id="@+id/trainNumber"
+        android:id="@+id/trainNumber_train"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="车次"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/go_off"
+        android:id="@+id/go_off_train"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/trainNumber"
+        android:layout_below="@+id/trainNumber_train"
         android:ems="10"
         android:hint="出发日期"
         android:inputType="date" />
 
     <Button
-        android:id="@+id/inquiry"
+        android:id="@+id/inquiry_train"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/go_off"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="120dp"
         android:text="查询" />
 </RelativeLayout>

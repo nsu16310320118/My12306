@@ -38,7 +38,7 @@
         android:inputType="numberDecimal" />
 
     <Button
-        android:id="@+id/inquiry"
+        android:id="@+id/inquiry_insurance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

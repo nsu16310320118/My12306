@@ -28,7 +28,7 @@ private SQLiteDatabase mydatabase;
         type=findViewById(R.id.type);
         IDNumber=findViewById(R.id.IDNumber);
         phoneNumber=findViewById(R.id.phoneNumber);
-        email=findViewById(R.id.email);
+        email=findViewById(R.id.email_change);
         passengerType=findViewById(R.id.PassengerType);
         agree=findViewById(R.id.agree);
         next=findViewById(R.id.next);

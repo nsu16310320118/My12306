@@ -23,7 +23,7 @@
                 android:textSize="22sp" />
 
             <EditText
-                android:id="@+id/userName"
+                android:id="@+id/userName_person"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -39,7 +39,7 @@
                 android:textSize="22sp" />
 
             <EditText
-                android:id="@+id/name"
+                android:id="@+id/name_person"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -48,7 +48,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/gender"
+                android:id="@+id/gender_person"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -57,7 +57,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/brithday"
+                android:id="@+id/birthday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -75,7 +75,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/idType"
+                android:id="@+id/idType_person"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -84,7 +84,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/idNumber"
+                android:id="@+id/idNumber_person"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -108,7 +108,7 @@
                 tools:text="联系方式" />
 
             <EditText
-                android:id="@+id/phoneNumer"
+                android:id="@+id/phoneNumer_person"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -124,7 +124,7 @@
                 android:inputType="number" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/email_person"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -156,7 +156,7 @@
                 tools:text="附加信息" />
 
             <EditText
-                android:id="@+id/passengerType"
+                android:id="@+id/passengerType_person"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"

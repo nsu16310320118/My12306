@@ -53,7 +53,7 @@
         <activity android:name=".outletsCheck" />
         <activity android:name=".stationCheck_unfinished" />
         <activity android:name=".saleCheck" />
-        <activity android:name=".serverCheck" />
+        <activity android:name=".serveCheck" />
         <activity android:name=".lostCheck_be" />
         <activity android:name=".lostCheck" />
         <activity android:name=".advise"></activity>

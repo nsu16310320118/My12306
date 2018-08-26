@@ -13,5 +13,7 @@ private ListAdapter myAdapter;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usually);
         //从数据库中调取该账号使用过的乘客名单
+        listView=findViewById(R.id.listView);
+        myAdapter=listView.getAdapter();
     }
 }

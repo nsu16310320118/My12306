@@ -35,7 +35,7 @@
         android:textSize="22sp" />
 
     <TextView
-        android:id="@+id/Notification Settings"
+        android:id="@+id/Notification_Settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/Notification Settings"
+        android:layout_below="@+id/Notification_Settings"
         android:text="密码修改"
         android:textSize="22sp" />
 

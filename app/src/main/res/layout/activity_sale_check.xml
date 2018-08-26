@@ -7,7 +7,7 @@
     tools:context=".saleCheck">
 
     <EditText
-        android:id="@+id/station"
+        android:id="@+id/station_sale"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -15,10 +15,10 @@
         android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/inquiry"
+        android:id="@+id/inquiry_sale"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/station"
+        android:layout_below="@+id/station_sale"
         android:text="查询" />
 </RelativeLayout>

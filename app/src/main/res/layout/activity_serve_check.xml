@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".serverCheck">
+    tools:context=".serveCheck">
 
     <EditText
-        android:id="@+id/serverType"
+        android:id="@+id/serveType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -51,7 +51,7 @@
         android:inputType="date" />
 
     <Button
-        android:id="@+id/inquiry"
+        android:id="@+id/inquiry_serve"
         android:layout_width="312dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
