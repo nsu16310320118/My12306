@@ -40,7 +40,7 @@
                 android:textSize="22sp" />
 
             <TextView
-                android:id="@+id/food"
+                android:id="@+id/specialfood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -57,16 +57,16 @@
                 android:textSize="22sp" />
 
             <TextView
-                android:id="@+id/navigation"
+                android:id="@+id/travel_guide"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:text="出行导航"
-                android:layout_marginTop="20dp"
                 android:textSize="22sp" />
 
             <TextView
-                android:id="@+id/goodService"
+                android:id="@+id/warmpromptServe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

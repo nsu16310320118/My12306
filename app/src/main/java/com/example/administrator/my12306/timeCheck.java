@@ -18,11 +18,11 @@ private String strStaion,strTrainNumber;
         trainNumber=findViewById(R.id.trainNumber_time);
         strStaion=station.getText().toString();
         strTrainNumber=trainNumber.getText().toString();
-        inquiry.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //由上述数据查询相关信息
-            }
-        });
+//        inquiry.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                //由上述数据查询相关信息
+//            }
+//        });
     }
 }

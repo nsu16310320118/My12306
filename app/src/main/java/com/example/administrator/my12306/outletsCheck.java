@@ -20,11 +20,11 @@ private String strProvience,strCity,StrCounty;
             strProvience=provience.getText().toString();
             strCity=city.getText().toString();
             StrCounty=county.getText().toString();
-      inquiry.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-              //通过省市县查询代售点
-          }
-      });
+//      inquiry.setOnClickListener(new View.OnClickListener() {
+//          @Override
+//          public void onClick(View view) {
+//              //通过省市县查询代售点
+//          }
+//      });
     }
 }

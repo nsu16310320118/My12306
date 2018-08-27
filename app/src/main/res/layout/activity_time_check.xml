@@ -31,7 +31,8 @@
         android:layout_marginBottom="-104dp"
         android:ems="10"
         android:hint="车站"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="青城山" />
 
     <EditText
         android:id="@+id/trainNumber_time"
@@ -42,7 +43,8 @@
         android:layout_marginTop="104dp"
         android:ems="10"
         android:hint="车次"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="C6132" />
 
     <Button
         android:id="@+id/inquiry_time"
