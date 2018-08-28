@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +31,7 @@ public class BookFragment extends Fragment {
     private ImageView change;
     private CheckBox student;
     private Button query;
+    private String strFrom,strTo;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -79,7 +81,14 @@ public class BookFragment extends Fragment {
                             .setOnPickListener(new OnPickListener() {
                                 @Override
                                 public void onPick(int position, City data) {
-                                   from.setText(data.getName());
+                                    strFrom=data.getName();
+                                    if(TextUtils.equals(strFrom,to.getText().toString())){
+                                        Toast.makeText(getActivity(),"出发城市非法，请重新选择",Toast.LENGTH_LONG).show();
+                                    }
+                                    else {
+                                        from.setText(strFrom);
+                                    }
+
                                 }
                                 @Override
                                 public void onLocate() {
@@ -111,7 +120,13 @@ public class BookFragment extends Fragment {
                             .setOnPickListener(new OnPickListener() {
                                 @Override
                                 public void onPick(int position, City data) {
-                                    to.setText(data.getName());
+                                    strTo=data.getName();
+                                    if(TextUtils.equals(from.getText().toString(),strTo)){
+                                        Toast.makeText(getActivity(),"到达城市非法，请重新选择",Toast.LENGTH_LONG).show();
+                                    }
+                                    else {
+                                        to.setText(strTo);
+                                    }
                                 }
                                 @Override
                                 public void onLocate() {
