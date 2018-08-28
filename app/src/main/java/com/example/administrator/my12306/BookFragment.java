@@ -55,6 +55,7 @@ public class BookFragment extends Fragment {
         godate=getActivity().findViewById(R.id.GoDate);
         gotime=getActivity().findViewById(R.id.GoTime);
         change=getActivity().findViewById(R.id.change);
+        change.setOnClickListener(new textViewListener());
         student=getActivity().findViewById(R.id.student);
         query=getActivity().findViewById(R.id.query);
     }
@@ -127,6 +128,14 @@ public class BookFragment extends Fragment {
                             })
                             .show();
                     break;
+                }
+                case R.id.GoDate:{
+                    break;
+                }
+                case  R.id.change:{
+                    String temp=from.getText().toString();
+                    from.setText(to.getText().toString());
+                    to.setText(temp);
                 }
             }
         }
