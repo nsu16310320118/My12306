@@ -2,6 +2,7 @@ package com.example.administrator.my12306;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,17 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.zaaach.citypicker.CityPicker;
+import com.zaaach.citypicker.adapter.OnPickListener;
+import com.zaaach.citypicker.model.City;
+import com.zaaach.citypicker.model.HotCity;
+import com.zaaach.citypicker.model.LocateState;
+import com.zaaach.citypicker.model.LocatedCity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BookFragment extends Fragment {
     private TextView from,to,godate,gotime;
@@ -37,7 +49,9 @@ public class BookFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         from=getActivity().findViewById(R.id.From);
+        from.setOnClickListener(new textViewListener());
         to=getActivity().findViewById(R.id.to);
+        to.setOnClickListener(new textViewListener());
         godate=getActivity().findViewById(R.id.GoDate);
         gotime=getActivity().findViewById(R.id.GoTime);
         change=getActivity().findViewById(R.id.change);
@@ -51,8 +65,67 @@ public class BookFragment extends Fragment {
             Intent intent;
             switch (view.getId()){
                 case R.id.From:{
-                    intent=new Intent(getActivity(),from.class);
-                    startActivityForResult(intent,1);
+                    List<HotCity> hotCities = new ArrayList<>();
+                    hotCities.add(new HotCity("北京", "北京", "101010100"));
+                    hotCities.add(new HotCity("上海", "上海", "101020100"));
+                    hotCities.add(new HotCity("广州", "广东", "101280101"));
+                    hotCities.add(new HotCity("深圳", "广东", "101280601"));
+                    hotCities.add(new HotCity("杭州", "浙江", "101210101"));
+                    CityPicker.getInstance()
+                            .setFragmentManager(getActivity().getSupportFragmentManager())
+                            .setLocatedCity(new LocatedCity("青城山", "成都", "101210103"))
+  .setHotCities(hotCities)
+                            .setOnPickListener(new OnPickListener() {
+                                @Override
+                                public void onPick(int position, City data) {
+                                   from.setText(data.getName());
+                                }
+                                @Override
+                                public void onLocate() {
+                                    //开始定位，这里模拟一下定位
+                                    new Handler().postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            //定位完成之后更新数据
+                                            CityPicker.getInstance()
+                                                    .locateComplete(new LocatedCity("青城山", "成都", "101210103"), LocateState.SUCCESS);
+                                        }
+                                    }, 2000);
+                                }
+                            })
+                            .show();
+                    break;
+                }
+                case R.id.to:{
+                    List<HotCity> hotCities = new ArrayList<>();
+                    hotCities.add(new HotCity("北京", "北京", "101010100"));
+                    hotCities.add(new HotCity("上海", "上海", "101020100"));
+                    hotCities.add(new HotCity("广州", "广东", "101280101"));
+                    hotCities.add(new HotCity("深圳", "广东", "101280601"));
+                    hotCities.add(new HotCity("杭州", "浙江", "101210101"));
+                    CityPicker.getInstance()
+                            .setFragmentManager(getActivity().getSupportFragmentManager())
+                            .setLocatedCity(new LocatedCity("青城山", "成都", "101210103"))
+                            .setHotCities(hotCities)
+                            .setOnPickListener(new OnPickListener() {
+                                @Override
+                                public void onPick(int position, City data) {
+                                    to.setText(data.getName());
+                                }
+                                @Override
+                                public void onLocate() {
+                                    //开始定位，这里模拟一下定位
+                                    new Handler().postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            //定位完成之后更新数据
+                                            CityPicker.getInstance()
+                                                    .locateComplete(new LocatedCity("青城山", "成都", "101210103"), LocateState.SUCCESS);
+                                        }
+                                    }, 2000);
+                                }
+                            })
+                            .show();
                     break;
                 }
             }
