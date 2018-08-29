@@ -24,6 +24,7 @@ import com.zaaach.citypicker.model.LocateState;
 import com.zaaach.citypicker.model.LocatedCity;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class BookFragment extends Fragment {
@@ -42,8 +43,16 @@ public class BookFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==1&&resultCode==2){
-            from.setText(data.getStringExtra("site"));
+        if(requestCode==1&&resultCode==6){
+            Calendar calendar=Calendar.getInstance();
+            int year=calendar.get(Calendar.YEAR);
+            int month=calendar.get(Calendar.MONTH);
+            int day=calendar.get(Calendar.DAY_OF_MONTH);
+            year=data.getIntExtra("year",year);
+            month=data.getIntExtra("month",month)+1;
+            day=data.getIntExtra("day",day);
+            String date=year+"-"+month+"-"+day;
+            godate.setText(date);
         }
     }
 
@@ -55,6 +64,7 @@ public class BookFragment extends Fragment {
         to=getActivity().findViewById(R.id.to);
         to.setOnClickListener(new textViewListener());
         godate=getActivity().findViewById(R.id.GoDate);
+        godate.setOnClickListener(new textViewListener());
         gotime=getActivity().findViewById(R.id.GoTime);
         change=getActivity().findViewById(R.id.change);
         change.setOnClickListener(new textViewListener());
@@ -145,14 +155,19 @@ public class BookFragment extends Fragment {
                     break;
                 }
                 case R.id.GoDate:{
+                    intent=new Intent(getActivity(),DateActivity.class);
+                    startActivityForResult(intent,1);
                     break;
                 }
                 case  R.id.change:{
                     String temp=from.getText().toString();
                     from.setText(to.getText().toString());
                     to.setText(temp);
+                    change.animate().rotation(180);
+                    break;
                 }
             }
         }
     }
+
 }

@@ -8,32 +8,33 @@
 
     <EditText
         android:id="@+id/original"
-        android:layout_width="match_parent"
+        android:layout_width="245dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="115dp"
         android:ems="10"
-        android:hint="原密码"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/newPwd"
-        android:layout_width="match_parent"
+        android:layout_width="245dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/original"
+        android:layout_marginStart="112dp"
         android:ems="10"
-        android:hint="新密码"
+
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/reNew"
-        android:layout_width="match_parent"
+        android:layout_width="245dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/newPwd"
+        android:layout_marginStart="113dp"
         android:ems="10"
-        android:hint="密码确认"
         android:inputType="textPersonName" />
 
     <EditText
@@ -43,7 +44,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/reNew"
         android:ems="10"
-        android:hint="短信验证"
+        android:hint="验证码"
         android:inputType="textPersonName" />
 
     <Button
@@ -62,4 +63,34 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="197dp"
         android:text="确定" />
+
+    <TextView
+        android:id="@+id/originPwd"
+        android:layout_width="112dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:text="原密码"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/newPassword"
+        android:layout_width="112dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/original"
+        android:text="新密码"
+        android:gravity="center_vertical"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/rePassword"
+        android:layout_width="112dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/newPwd"
+        android:text="确认密码"
+        android:gravity="center_vertical"
+        android:textSize="22sp" />
 </RelativeLayout>
