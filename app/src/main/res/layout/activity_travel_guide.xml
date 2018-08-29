@@ -13,6 +13,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
         android:text="正晚点查询"
         android:textSize="22sp" />
 
@@ -22,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/timeCheck"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
         android:text="车次查询"
         android:textSize="22sp" />
 
@@ -31,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/trainCheck"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
         android:text="票价查询"
         android:textSize="22sp" />
 
@@ -40,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/fareCheck"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
         android:text="代售点查询"
         android:textSize="22sp" />
 
@@ -49,6 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/outletsCheck"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
         android:text="车站车次查询"
         android:textSize="22sp" />
 
@@ -58,6 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/stationCheck"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
         android:text="起售时间查询"
         android:textSize="22sp" />
 </RelativeLayout>
