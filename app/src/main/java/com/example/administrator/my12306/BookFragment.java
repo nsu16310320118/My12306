@@ -26,8 +26,10 @@ import com.zaaach.citypicker.model.HotCity;
 import com.zaaach.citypicker.model.LocateState;
 import com.zaaach.citypicker.model.LocatedCity;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class BookFragment extends Fragment {
@@ -36,6 +38,8 @@ public class BookFragment extends Fragment {
     private CheckBox student;
     private Button query;
     private String strFrom,strTo;
+    private SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -68,6 +72,9 @@ public class BookFragment extends Fragment {
         to=getActivity().findViewById(R.id.to);
         to.setOnClickListener(new textViewListener());
         godate=getActivity().findViewById(R.id.GoDate);
+        Date date=new Date(System.currentTimeMillis());
+        godate.setText(sdf.format(date));
+
         godate.setOnClickListener(new textViewListener());
         gotime=getActivity().findViewById(R.id.GoTime);
         gotime.setOnClickListener(new textViewListener());
@@ -168,6 +175,7 @@ public class BookFragment extends Fragment {
                     break;
                 }
                 case  R.id.change:{
+                    change.animate().rotation(90);
                     String temp=from.getText().toString();
                     from.setText(to.getText().toString());
                     to.setText(temp);

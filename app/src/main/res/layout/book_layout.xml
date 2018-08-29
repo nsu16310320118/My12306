@@ -47,7 +47,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="96dp"
         android:gravity="center"
-        android:text="TextView" />
+        android:text="出发站" />
 
     <TextView
         android:id="@+id/to"
@@ -57,7 +57,7 @@
         android:layout_alignTop="@+id/From"
         android:layout_marginEnd="0dp"
         android:gravity="center"
-        android:text="TextView" />
+        android:text="终点站" />
 
     <ImageView
         android:id="@+id/change"
@@ -92,7 +92,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView9"
         android:gravity="center"
-        android:text="TextView" />
+        android:text="二等座" />
 
     <CheckBox
         android:id="@+id/student"
