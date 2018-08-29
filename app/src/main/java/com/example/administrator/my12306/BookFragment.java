@@ -30,7 +30,7 @@ import java.util.List;
 public class BookFragment extends Fragment {
     private TextView from,to,godate,gotime;
     private ImageView change;
-    private CheckBox student;
+    private CheckBox student,only,changeTrains;
     private Button query;
     private String strFrom,strTo;
     @Nullable
@@ -70,6 +70,8 @@ public class BookFragment extends Fragment {
         change.setOnClickListener(new textViewListener());
         student=getActivity().findViewById(R.id.student);
         query=getActivity().findViewById(R.id.query);
+        only=getActivity().findViewById(R.id.only);
+        changeTrains=getActivity().findViewById(R.id.changeTrains);
     }
     private class textViewListener implements View.OnClickListener{
 
