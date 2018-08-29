@@ -175,10 +175,11 @@ public class BookFragment extends Fragment {
                     break;
                 }
                 case  R.id.change:{
-                    change.animate().rotation(90);
+                    change.animate().rotation(180);
                     String temp=from.getText().toString();
                     from.setText(to.getText().toString());
                     to.setText(temp);
+                    break;
                 }
                 case R.id.GoTime:{
                     AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
