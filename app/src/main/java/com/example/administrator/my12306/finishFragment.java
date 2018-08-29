@@ -12,8 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.aurora.t12306.R;
-
 public class finishFragment extends Fragment {
 
     private TextView today,unGo,history,todayOrder;
@@ -34,29 +32,29 @@ public class finishFragment extends Fragment {
         int day = calendar.get(calendar.DAY_OF_MONTH);
         int dayWeek = calendar.get(Calendar.DAY_OF_WEEK);
         String date = year + "年" + mouth + "月" + day + "日";
-        switch (dayWeek) {
-            case 1:
-                today.setText(date + "星期日");
-                break;
-            case 2:
-                today.setText(date + "星期一");
-                break;
-            case 3:
-                today.setText(date + "星期二");
-                break;
-            case 4:
-                today.setText(date + "星期三");
-                break;
-            case 5:
-                today.setText(date + "星期四");
-                break;
-            case 6:
-                today.setText(date + "星期五");
-                break;
-            case 7:
-                today.setText(date + "星期六");
-                break;
-        }
+//        switch (dayWeek) {
+//            case 1:
+//                today.setText(date + "星期日");
+//                break;
+//            case 2:
+//                today.setText(date + "星期一");
+//                break;
+//            case 3:
+//                today.setText(date + "星期二");
+//                break;
+//            case 4:
+//                today.setText(date + "星期三");
+//                break;
+//            case 5:
+//                today.setText(date + "星期四");
+//                break;
+//            case 6:
+//                today.setText(date + "星期五");
+//                break;
+//            case 7:
+//                today.setText(date + "星期六");
+//                break;
+//        }
 
     }
 
