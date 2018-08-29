@@ -1,11 +1,13 @@
-package com.example.administrator.my12306;
+package com.example.aurora.t12306;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,13 +26,12 @@ import com.zaaach.citypicker.model.LocateState;
 import com.zaaach.citypicker.model.LocatedCity;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class BookFragment extends Fragment {
-    private TextView from,to,godate,gotime;
+    private TextView from,to,godate,gotime,seat;
     private ImageView change;
-    private CheckBox student,only,changeTrains;
+    private CheckBox student;
     private Button query;
     private String strFrom,strTo;
     @Nullable
@@ -43,16 +44,8 @@ public class BookFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==1&&resultCode==6){
-            Calendar calendar=Calendar.getInstance();
-            int year=calendar.get(Calendar.YEAR);
-            int month=calendar.get(Calendar.MONTH);
-            int day=calendar.get(Calendar.DAY_OF_MONTH);
-            year=data.getIntExtra("year",year);
-            month=data.getIntExtra("month",month)+1;
-            day=data.getIntExtra("day",day);
-            String date=year+"-"+month+"-"+day;
-            godate.setText(date);
+        if(requestCode==1&&resultCode==2){
+            from.setText(data.getStringExtra("site"));
         }
     }
 
@@ -66,12 +59,14 @@ public class BookFragment extends Fragment {
         godate=getActivity().findViewById(R.id.GoDate);
         godate.setOnClickListener(new textViewListener());
         gotime=getActivity().findViewById(R.id.GoTime);
+        godate.setOnClickListener(new textViewListener());
         change=getActivity().findViewById(R.id.change);
         change.setOnClickListener(new textViewListener());
         student=getActivity().findViewById(R.id.student);
         query=getActivity().findViewById(R.id.query);
-        only=getActivity().findViewById(R.id.only);
-        changeTrains=getActivity().findViewById(R.id.changeTrains);
+        query.setOnClickListener(new textViewListener());
+        seat=getActivity().findViewById(R.id.seat);
+        seat.setOnClickListener(new textViewListener());
     }
     private class textViewListener implements View.OnClickListener{
 
@@ -157,19 +152,40 @@ public class BookFragment extends Fragment {
                     break;
                 }
                 case R.id.GoDate:{
-                    intent=new Intent(getActivity(),DateActivity.class);
-                    startActivityForResult(intent,1);
                     break;
                 }
                 case  R.id.change:{
                     String temp=from.getText().toString();
                     from.setText(to.getText().toString());
                     to.setText(temp);
-                    change.animate().rotation(180);
+                }
+                case R.id.GoTime:{
+                    AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+                    builder.setTitle("选择时间段");
+                    final String[] times={"00:00~24:00","06:00~18:00","07:00~10:00"};
+                    builder.setItems(times, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            gotime.setText(times[i]);
+                        }
+                    });
+                    builder.show();
+                    break;
+                }
+                case R.id.seat:{
+                    AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+                    builder.setTitle("席别");
+                    final String[] sats={"不限","商务座","特等座","一等座","二等座"};
+                    builder.setItems(sats, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            seat.setText(sats[i]);
+                        }
+                    });
+                    builder.show();
                     break;
                 }
             }
         }
     }
-
 }
