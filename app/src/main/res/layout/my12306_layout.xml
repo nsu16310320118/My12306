@@ -20,9 +20,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="22sp"
-                      app/src/main/res/layout/activity_warmprompt.xml
-                tools:text="、、" />
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:text="测试员A"
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/phone"
@@ -30,8 +30,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="手机核验"
-                      app/src/main/res/layout/activity_warmprompt.xml
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp" />
 
             <TextView
                 android:id="@+id/insurance"
@@ -39,8 +39,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="我的保险"
-                      app/src/main/res/layout/activity_warmprompt.xml
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp" />
 
             <TextView
                 android:id="@+id/specialfood"
@@ -48,8 +48,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="我的餐饮·特产"
-                      app/src/main/res/layout/activity_warmprompt.xml
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"/>
 
             <TextView
                 android:id="@+id/easyTrain"
