@@ -5,39 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/time"
+    <ImageView
+        android:id="@+id/onTimeImage"
         android:layout_width="78dp"
         android:layout_height="69dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="13dp"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/click" />
 
-    <ImageButton
-        android:id="@+id/goodService"
+    <ImageView
+        android:id="@+id/goodServiceImage"
         android:layout_width="78dp"
         android:layout_height="69dp"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/time"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_toStartOf="@+id/travelImage"
+        app:srcCompat="@drawable/goodServe" />
 
-    <ImageButton
-        android:id="@+id/food"
+    <ImageView
+        android:id="@+id/travelImage"
         android:layout_width="78dp"
         android:layout_height="69dp"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/GoTime"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/travel" />
 
-    <ImageButton
-        android:id="@+id/trainGo"
+    <ImageView
+        android:id="@+id/saleImage"
         android:layout_width="78dp"
         android:layout_height="69dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="11dp"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/ontime" />
 
     <TextView
         android:id="@+id/From"
@@ -65,7 +65,7 @@
         android:layout_height="55dp"
         android:layout_alignTop="@+id/From"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/change" />
+        app:srcCompat="@drawable/arrow" />
 
     <TextView
         android:id="@+id/GoDate"

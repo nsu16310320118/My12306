@@ -34,11 +34,12 @@ import java.util.List;
 
 public class BookFragment extends Fragment {
     private TextView from,to,godate,gotime,seat;
-    private ImageView change;
+    private ImageView change,ontime,goodService,travel,sale;
     private CheckBox student;
     private Button query;
     private String strFrom,strTo;
     private SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+    private boolean flag=true;
 
     @Nullable
     @Override
@@ -79,7 +80,15 @@ public class BookFragment extends Fragment {
         gotime=getActivity().findViewById(R.id.GoTime);
         gotime.setOnClickListener(new textViewListener());
         change=getActivity().findViewById(R.id.change);
-        change.setOnClickListener(new textViewListener());
+        change.setOnClickListener(new imageViewListener());
+        ontime=getActivity().findViewById(R.id.onTimeImage);
+        ontime.setOnClickListener(new imageViewListener());
+        goodService=getActivity().findViewById(R.id.goodServiceImage);
+        goodService.setOnClickListener(new imageViewListener());
+        travel=getActivity().findViewById(R.id.travelImage);
+        travel.setOnClickListener(new imageViewListener());
+        sale=getActivity().findViewById(R.id.saleImage);
+        sale.setOnClickListener(new imageViewListener());
         student=getActivity().findViewById(R.id.student);
         query=getActivity().findViewById(R.id.query);
         query.setOnClickListener(new textViewListener());
@@ -174,13 +183,6 @@ public class BookFragment extends Fragment {
                     startActivityForResult(intent,1);
                     break;
                 }
-                case  R.id.change:{
-                    change.animate().rotation(180);
-                    String temp=from.getText().toString();
-                    from.setText(to.getText().toString());
-                    to.setText(temp);
-                    break;
-                }
                 case R.id.GoTime:{
                     AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
                     builder.setTitle("选择时间段");
@@ -205,6 +207,48 @@ public class BookFragment extends Fragment {
                         }
                     });
                     builder.show();
+                    break;
+                }
+            }
+        }
+    }
+    private class imageViewListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            Intent intent;
+            switch (view.getId()){
+                case  R.id.change:{
+                    if(flag) {
+                        change.animate().rotation(180);
+                        flag=false;
+                    }
+                    else{
+                        change.animate().rotation(0);
+                        flag=true;
+                    }
+                    String temp=from.getText().toString();
+                    from.setText(to.getText().toString());
+                    to.setText(temp);
+                    break;
+                }
+                case R.id.onTimeImage:{
+                    intent=new Intent(getActivity(),timeCheck.class);
+                    startActivity(intent);
+                    break;
+                }
+                case R.id.goodServiceImage:{
+                    intent=new Intent(getActivity(),warmprompt.class);
+                    startActivity(intent);
+                    break;
+                }
+                case R.id.travelImage:{
+                    Toast.makeText(getActivity(),"这里是广告",Toast.LENGTH_LONG).show();
+                    break;
+                }
+                case R.id.saleImage:{
+                    intent=new Intent(getActivity(),saleCheck.class);
+                    startActivity(intent);
                     break;
                 }
             }

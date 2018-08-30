@@ -11,6 +11,6 @@ public class resultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
     }
     public void setTitle(CharSequence title){
-//        (findViewById(R.id.text_title)).setText(title);
+//        findViewById(R.id.text_title).setText(title);
     }
 }
