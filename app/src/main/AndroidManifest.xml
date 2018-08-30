@@ -59,7 +59,9 @@
         <activity android:name=".lostCheck" />
         <activity android:name=".advise" />
         <activity android:name=".DateActivity" />
-        <activity android:name=".orderTicket"></activity>
+        <activity android:name=".orderTicket">
+
+        </activity>
     </application>
 
 </manifest>

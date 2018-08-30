@@ -13,6 +13,5 @@
         android:background="#0033FF"
         app:leftBackground="@drawable/back"
         app:rightChoose="@drawable/right"
-        app:titleText="我的首页"
-        app:titleTextSize="6sp" />
+        app:changeButton="@drawable/change"/>
 </RelativeLayout>

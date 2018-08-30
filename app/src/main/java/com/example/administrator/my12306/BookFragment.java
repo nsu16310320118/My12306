@@ -91,7 +91,17 @@ public class BookFragment extends Fragment {
         sale.setOnClickListener(new imageViewListener());
         student=getActivity().findViewById(R.id.student);
         query=getActivity().findViewById(R.id.query);
-        query.setOnClickListener(new textViewListener());
+        query.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent queryIntent=new Intent(getActivity(),orderTicket.class);
+                queryIntent.putExtra("fromCity",from.getText().toString());
+                queryIntent.putExtra("toCity",to.getText().toString());
+                queryIntent.putExtra("goDate",godate.getText().toString());
+                queryIntent.putExtra("goTime",gotime.getText().toString());
+                startActivity(queryIntent);
+            }
+        });
         seat=getActivity().findViewById(R.id.seat);
         seat.setOnClickListener(new textViewListener());
     }

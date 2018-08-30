@@ -4,7 +4,9 @@
     <declare-styleable name="TopBar">
         <attr name="leftBackground" format="reference"/>
         <attr name="rightChoose" format="reference"/>
-        <attr name="titleText" format="reference|string"/>
+        <attr name="fromCity" format="reference"/>
+        <attr name="changeButton" format="reference"/>
+        <attr name="toCity" format="reference"/>
         <attr name="titleTextColor" format="color"/>
         <attr name="titleTextSize" format="reference|dimension"/>
     </declare-styleable>
