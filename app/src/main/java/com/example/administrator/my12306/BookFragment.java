@@ -94,7 +94,7 @@ public class BookFragment extends Fragment {
         query.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent queryIntent=new Intent(getActivity(),orderTicket.class);
+                Intent queryIntent=new Intent(getActivity(),order_ticket.class);
                 queryIntent.putExtra("fromCity",from.getText().toString());
                 queryIntent.putExtra("toCity",to.getText().toString());
                 queryIntent.putExtra("goDate",godate.getText().toString());
