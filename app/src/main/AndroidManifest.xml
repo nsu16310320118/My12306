@@ -59,7 +59,9 @@
         <activity android:name=".lostCheck" />
         <activity android:name=".advise" />
         <activity android:name=".DateActivity" />
-        <activity android:name=".order_ticket"></activity>
+        <activity android:name=".order_ticket"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
