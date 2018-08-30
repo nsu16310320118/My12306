@@ -15,12 +15,12 @@
         app:srcCompat="@drawable/click" />
 
     <ImageView
-        android:id="@+id/goodServiceImage"
+        android:id="@+id/goodserviceImage"
         android:layout_width="78dp"
         android:layout_height="69dp"
         android:layout_alignParentTop="true"
         android:layout_toStartOf="@+id/travelImage"
-        app:srcCompat="@drawable/goodServe" />
+        app:srcCompat="@drawable/goodserve" />
 
     <ImageView
         android:id="@+id/travelImage"

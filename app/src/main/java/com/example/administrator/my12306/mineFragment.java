@@ -85,7 +85,7 @@ public class mineFragment extends Fragment {
                 startActivity(intent);
                 break;
             }
-            case R.id.goodService:{
+            case R.id.warmpromptServe:{
                 intent=new Intent(getActivity(),warmprompt.class);
                 startActivity(intent);
                 break;

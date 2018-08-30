@@ -83,7 +83,7 @@ public class BookFragment extends Fragment {
         change.setOnClickListener(new imageViewListener());
         ontime=getActivity().findViewById(R.id.onTimeImage);
         ontime.setOnClickListener(new imageViewListener());
-        goodService=getActivity().findViewById(R.id.goodServiceImage);
+        goodService=getActivity().findViewById(R.id.goodserviceImage);
         goodService.setOnClickListener(new imageViewListener());
         travel=getActivity().findViewById(R.id.travelImage);
         travel.setOnClickListener(new imageViewListener());
@@ -237,7 +237,7 @@ public class BookFragment extends Fragment {
                     startActivity(intent);
                     break;
                 }
-                case R.id.goodServiceImage:{
+                case R.id.goodserviceImage:{
                     intent=new Intent(getActivity(),warmprompt.class);
                     startActivity(intent);
                     break;
