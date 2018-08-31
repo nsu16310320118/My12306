@@ -3,11 +3,15 @@ package com.example.administrator.my12306;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
 public class order_ticket extends AppCompatActivity {
-TopBar topBar;
+private TopBar topBar;
+private ListView timeTable;
+private ArrayAdapter arrayAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
