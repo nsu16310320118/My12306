@@ -24,14 +24,14 @@ public class DateActivity extends AppCompatActivity implements DatePicker.OnDate
 
         Calendar calendar = Calendar.getInstance();
         picker = (DatePicker) findViewById(R.id.datePicker);
-        picker.setMinDate(new Date().getTime());
-        calendar.add(Calendar.MONTH, 1);
-        picker.setMaxDate(calendar.getTimeInMillis());
 
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
 
+        picker.setMinDate(new Date().getTime());
+        calendar.add(Calendar.MONTH, 1);
+        picker.setMaxDate(calendar.getTimeInMillis());
         picker.init(year, month, day, this);
     }
 
