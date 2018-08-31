@@ -125,14 +125,15 @@ public class BookFragment extends Fragment {
                             .setOnPickListener(new OnPickListener() {
                                 @Override
                                 public void onPick(int position, City data) {
-                                    strFrom=data.getName();
-                                    if(TextUtils.equals(strFrom,to.getText().toString())){
-                                        Toast.makeText(getActivity(),"出发城市非法，请重新选择",Toast.LENGTH_LONG).show();
-                                    }
-                                    else {
-                                        from.setText(strFrom);
-                                    }
+                                    if (data != null) {
+                                        strFrom = data.getName();
+                                        if (TextUtils.equals(strFrom, to.getText().toString())) {
+                                            Toast.makeText(getActivity(), "出发城市非法，请重新选择", Toast.LENGTH_LONG).show();
+                                        } else {
+                                            from.setText(strFrom);
+                                        }
 
+                                    }
                                 }
                                 @Override
                                 public void onLocate() {
@@ -164,12 +165,13 @@ public class BookFragment extends Fragment {
                             .setOnPickListener(new OnPickListener() {
                                 @Override
                                 public void onPick(int position, City data) {
-                                    strTo=data.getName();
-                                    if(TextUtils.equals(from.getText().toString(),strTo)){
-                                        Toast.makeText(getActivity(),"到达城市非法，请重新选择",Toast.LENGTH_LONG).show();
-                                    }
-                                    else {
-                                        to.setText(strTo);
+                                    if(data!=null) {
+                                        strTo = data.getName();
+                                        if (TextUtils.equals(from.getText().toString(), strTo)) {
+                                            Toast.makeText(getActivity(), "到达城市非法，请重新选择", Toast.LENGTH_LONG).show();
+                                        } else {
+                                            to.setText(strTo);
+                                        }
                                     }
                                 }
                                 @Override

@@ -12,7 +12,6 @@
         android:background="#0033FF"
         app:leftBackground="@drawable/back"
         app:rightBackground="@drawable/right"
-        app:titleText="我的首页"
         app:titleTextColor="#FFF"
-        app:titleTextSize="6sp" />
+        app:titleTextSize="10sp" />
 </android.support.constraint.ConstraintLayout>

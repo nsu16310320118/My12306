@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.example.administrator.my12306.R;
 
 public class TopBar extends RelativeLayout {
-    private Button leftButton, rightButton;
+    private Button leftButton, rightButton,changeButton;
     private TextView titleTextView;
     private OnLeftAndRightClickListener listener;//监听点击事件 //设置监听器
      public void setOnLeftAndRightClickListener(OnLeftAndRightClickListener listener) {
@@ -20,7 +20,7 @@ public class TopBar extends RelativeLayout {
     // 按钮点击接口
      public interface OnLeftAndRightClickListener {
          void OnLeftButtonClick();
-         void OnRightButtonClick(); }
+         void OnRightButtonClick();}
     // 设置左边按钮的可见性
      public void setLeftButtonVisibility(boolean flag){
          if (flag)
@@ -32,6 +32,9 @@ public class TopBar extends RelativeLayout {
      public void setRightButtonVisibility(boolean flag){
          if (flag) rightButton.setVisibility(View.VISIBLE);
          else rightButton.setVisibility(View.GONE);
+     }
+     public void setTitleTextView(String titleText){
+         titleTextView.setText(titleText);
      }
     public TopBar(Context context, AttributeSet attrs) {
     super(context, attrs); LayoutInflater.from(context).inflate(R.layout.layout_topbar, this);
@@ -52,11 +55,12 @@ public class TopBar extends RelativeLayout {
          TypedArray typeArray = context.obtainStyledAttributes(attrs, R.styleable.TopBar);
          int leftBtnBackground = typeArray.getResourceId(R.styleable.TopBar_leftBackground, 0);
          int rightBtnBackground = typeArray.getResourceId(R.styleable.TopBar_rightBackground, 0);
-         String titleText = typeArray.getString(R.styleable.TopBar_titleText);
          float titleTextSize = typeArray.getDimension(R.styleable.TopBar_titleTextSize, 0);
-         int titleTextColor = typeArray.getColor(R.styleable.TopBar_titleTextColor, 0x38ad5a); //释放资源
+         int titleTextColor = typeArray.getColor(R.styleable.TopBar_titleTextColor, 0x38ad5a);
+         //释放资源
          typeArray.recycle();
          leftButton.setBackgroundResource(leftBtnBackground);
          rightButton.setBackgroundResource(rightBtnBackground);
-         titleTextView.setText(titleText); titleTextView.setTextSize(titleTextSize);
-         titleTextView.setTextColor(titleTextColor); }}
+         titleTextView.setTextSize(titleTextSize);
+         titleTextView.setTextColor(titleTextColor);
+ }}
