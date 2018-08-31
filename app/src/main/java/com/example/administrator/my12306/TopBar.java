@@ -4,17 +4,20 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.administrator.my12306.R;
 
 public class TopBar extends RelativeLayout {
-    private Button leftButton, rightButton,changeButton;
+    private Button leftButton, rightButton;
     private TextView titleTextView;
-    private OnLeftAndRightClickListener listener;//监听点击事件 //设置监听器
+    private OnLeftAndRightClickListener listener;//监听点击事件
+    // 设置监听器
      public void setOnLeftAndRightClickListener(OnLeftAndRightClickListener listener) {
          this.listener = listener; }
     // 按钮点击接口
@@ -46,9 +49,16 @@ public class TopBar extends RelativeLayout {
              }
     }
     });
-    rightButton.setOnClickListener(new OnClickListener() { @Override public void onClick(View v) {
-        if (listener != null) { listener.OnRightButtonClick();//点击回调
-             }
+    rightButton.setOnClickListener(new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+        if (listener != null) {
+            listener.OnRightButtonClick();//点击回调
+            PopupMenu popupMenu=new PopupMenu(getContext(),v);
+            MenuInflater inflater = popupMenu.getMenuInflater();
+            inflater.inflate(R.menu.order_ticket_menu, popupMenu.getMenu());
+            popupMenu.show();
+        }
     }
     }); //获得自定义属性并赋值
 

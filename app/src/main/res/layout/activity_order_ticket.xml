@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".order_ticket">
+
     <com.example.administrator.my12306.TopBar
         android:id="@+id/topbar"
         android:layout_width="match_parent"
@@ -13,5 +15,12 @@
         app:leftBackground="@drawable/back"
         app:rightBackground="@drawable/right"
         app:titleTextColor="#FFF"
-        app:titleTextSize="10sp" />
-</android.support.constraint.ConstraintLayout>
+        app:titleTextSize="8sp">
+
+    </com.example.administrator.my12306.TopBar>
+
+    <ListView
+        android:id="@+id/timeTable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
