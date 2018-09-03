@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView26"
+        android:layout_below="@+id/textView26"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="40dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView27"
+        android:layout_alignBottom="@+id/textView27"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="36dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView26"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView28"
+        android:layout_alignStart="@+id/textView31"/>
+        <!--app:srcCompat="@drawable/long_arrows" />-->
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/imageView13"
+        android:layout_below="@+id/imageView13"
+        android:text="TextView" />
+
+    <ListView
+        android:id="@+id/passenger"
+        android:layout_width="match_parent"
+        android:layout_height="124dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView32"
+        android:layout_marginTop="11dp" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView26"
+        android:layout_below="@+id/passenger"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView37"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="17dp"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/btnPay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView37"
+        android:layout_marginTop="13dp"
+        android:text="立即支付" />
+
+    <Button
+        android:id="@+id/btnIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/btnPay"
+        android:text="购买保险" />
+
+    <Button
+        android:id="@+id/btnFan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnIn"
+        android:layout_centerHorizontal="true"
+        android:text="购买返程" />
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnFan"
+        android:layout_centerHorizontal="true"
+        android:text="送票上门" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/textView31"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btnCan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="取消订单"
+        android:layout_below="@+id/btnSend"
+        android:layout_alignParentStart="true" />
+    <!--app:srcCompat="@drawable/id_card" />-->
+</RelativeLayout>
