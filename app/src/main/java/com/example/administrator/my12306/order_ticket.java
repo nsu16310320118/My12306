@@ -18,7 +18,7 @@ import java.util.List;
 public class order_ticket extends AppCompatActivity {
     private TopBar topBar;
     private ListView timeTable;
-    private TextView startCity, endCity, orderTime;
+    private TextView orderTime;
     private static String fromCity, toCity, goDate;
     private TrainListAdapter adapter;
     private List<order_ticket.Number> trainNumber = new ArrayList<order_ticket.Number>();
@@ -31,8 +31,6 @@ public class order_ticket extends AppCompatActivity {
         LayoutInflater factory = LayoutInflater.from(order_ticket.this);
         View layout = factory.inflate(R.layout.train_number, null);
         topBar = findViewById(R.id.topbar);
-        startCity = layout.findViewById(R.id.from_train_number);
-        endCity = layout.findViewById(R.id.end_train_number);
         orderTime = findViewById(R.id.order_time);
         timeTable = findViewById(R.id.trianListView);
         initTrainNumber();

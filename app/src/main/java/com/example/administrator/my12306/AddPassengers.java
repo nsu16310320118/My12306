@@ -1,4 +1,4 @@
-package com.example.aurora.t12306;
+package com.example.administrator.my12306;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
@@ -37,13 +37,13 @@ public class AddPassengers extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_passengers);
+        setContentView(R.layout.add_passengers);
 
-        edtGender = (TextView) findViewById(R.id.edtGender);
-        edtBirthday = (TextView) findViewById(R.id.edtBirthday);
-        edtCountry = (TextView) findViewById(R.id.edtCountry);
-        edtCardLei = (TextView) findViewById(R.id.edtCardLei);
-        edtTourLei = (TextView) findViewById(R.id.edtTourLei);
+        edtGender = findViewById(R.id.edt);
+        edtBirthday =  findViewById(R.id.);
+        edtCountry =  findViewById(R.id.edtCountry);
+        edtCardLei =  findViewById(R.id.edtCardLei);
+        edtTourLei =  findViewById(R.id.edtTourLei);
 
         Calendar calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
