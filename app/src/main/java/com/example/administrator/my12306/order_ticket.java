@@ -39,7 +39,10 @@ public class order_ticket extends AppCompatActivity {
         timeTable.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(order_ticket.this,"你点击对了",Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(order_ticket.this,ConfirmOrder.class);
+                intent.putExtra("fromCity",fromCity);
+                intent.putExtra("toCity",toCity);
+                startActivity(intent);
                 //把点击的车次传送过去
             }
         });

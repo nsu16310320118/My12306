@@ -37,10 +37,10 @@ public class AddPassengers extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_passengers);
+        setContentView(R.layout.activity_add_passengers);
 
-        edtGender = findViewById(R.id.edt);
-        edtBirthday =  findViewById(R.id.);
+        edtGender = findViewById(R.id.edtGender);
+        edtBirthday =  findViewById(R.id.edtBirthday);
         edtCountry =  findViewById(R.id.edtCountry);
         edtCardLei =  findViewById(R.id.edtCardLei);
         edtTourLei =  findViewById(R.id.edtTourLei);
@@ -88,7 +88,7 @@ public class AddPassengers extends AppCompatActivity {
                     });
                     break;
                 case R.id.edtCountry:
-                    Intent intent = new Intent(AddPassengers.this, Country.class);
+                    Intent intent = new Intent(AddPassengers.this,Country.class);
                     startActivity(intent);
                     break;
                 case R.id.edtCardLei:

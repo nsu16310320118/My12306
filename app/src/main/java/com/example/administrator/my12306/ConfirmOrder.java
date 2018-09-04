@@ -1,4 +1,4 @@
-package com.example.aurora.t12306;
+package com.example.administrator.my12306;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,24 +12,30 @@ import android.widget.TextView;
 public class ConfirmOrder extends AppCompatActivity {
 
     private TextView outDate, previous, nextDay, add;
-    private Button btnCon;
+    private TextView fromPort,toport;
+    private Button btnSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_confirm_order);
+        setContentView(R.layout.confirm_order);
 
 //        outDate = (TextView) findViewById(R.id.tvOutDate);
 //        previous = (TextView) findViewById(R.id.tvPrevious);
 //        nextDay = (TextView) findViewById(R.id.tvNextDay);
-        add = (TextView) findViewById(R.id.tvAdd);
-        btnCon = (Button) findViewById(R.id.btnCon);
+        add = findViewById(R.id.tv_Add);
+        btnSubmit = findViewById(R.id.btnSubmit);
+        fromPort=findViewById(R.id.fromPort);
+        toport=findViewById(R.id.toPort);
+        Intent intent=getIntent();
+        fromPort.setText("jaa");
+        toport.setText("ss");
 
 //        outDate.setOnClickListener(new actionListener());
 //        previous.setOnClickListener(new actionListener());
 //        nextDay.setOnClickListener(new actionListener());
         add.setOnClickListener(new actionListener());
-        btnCon.setOnClickListener(new actionListener());
+        btnSubmit.setOnClickListener(new actionListener());
 
     }
 
@@ -51,7 +57,7 @@ public class ConfirmOrder extends AppCompatActivity {
                     Intent intentPsg = new Intent(ConfirmOrder.this, Passengers.class);
                     startActivityForResult(intentPsg, 2);
                     break;
-                case R.id.btnCon:
+                case R.id.btnSubmit:
 //                    if (){
                     final AlertDialog.Builder builder = new AlertDialog.Builder(ConfirmOrder.this);
                     builder.setTitle("温馨提示");
