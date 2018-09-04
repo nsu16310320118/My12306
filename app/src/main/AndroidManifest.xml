@@ -63,6 +63,10 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
         <activity android:name=".ConfirmOrder"/>
+        <activity android:name=".AddPassengers"/>
+        <activity android:name=".PayTicket"/>
+        <activity android:name=".Country"/>
+        <activity android:name=".Passengers"/>
     </application>
 
 </manifest>

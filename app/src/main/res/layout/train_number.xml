@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="12dp"
+        android:text="number"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/ticketNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/number"
+        android:layout_below="@+id/startTime"
+        android:layout_marginTop="18dp"
+        android:text="商务：1张"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/from_train_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/number"
+        android:layout_alignBottom="@+id/number"
+        android:layout_toEndOf="@+id/imageView6"
+        android:text="北京"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/startTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/from_train_number"
+        android:layout_below="@+id/from_train_number"
+        android:text="12:20"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/end_train_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/from_train_number"
+        android:layout_alignBottom="@+id/from_train_number"
+        android:layout_toStartOf="@+id/imageView5"
+        android:text="上海"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/endTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/end_train_number"
+        android:layout_below="@+id/end_train_number"
+        android:text="18:16"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/imageView8"
+        android:layout_marginStart="17dp"
+        app:srcCompat="@drawable/id_card" />
+
+    <TextView
+        android:id="@+id/first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/ticketNum"
+        android:layout_alignBottom="@+id/ticketNum"
+        android:layout_toStartOf="@+id/imageView8"
+        android:text="一等：2张"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/first"
+        android:layout_alignBottom="@+id/first"
+        android:layout_toStartOf="@+id/endTime"
+        android:text="二等：无"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/end_train_number"
+        android:layout_marginEnd="11dp"
+        app:srcCompat="@drawable/down_arrows" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/startTime"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/number"
+        app:srcCompat="@drawable/start" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/endTime"
+        android:layout_toStartOf="@+id/end_train_number"
+        app:srcCompat="@drawable/end" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/imageView4"
+        android:layout_toStartOf="@+id/second"
+        app:srcCompat="@drawable/long_arrows" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView7"
+        android:layout_toEndOf="@+id/first"
+        android:text="5小时56分钟"
+        android:textSize="12sp" />
+
+</RelativeLayout>
