@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_passengers"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    >
+    <com.example.administrator.my12306.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#0033FF"
+        app:leftBackground="@drawable/back"
+        app:rightBackground="@drawable/right"
+        app:titleTextColor="#FFF"
+        app:titleTextSize="8sp">
+
+    </com.example.administrator.my12306.TopBar>
+
+    <LinearLayout
+        android:id="@+id/line2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="30dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_search"
+            android:ems="10"
+            android:hint="搜索"
+            android:inputType="textPersonName" />
+
+        <ImageView
+            android:id="@+id/ibtnAdd"
+            android:layout_width="1dp"
+            android:layout_height="45dp"
+            android:layout_weight="0.39"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/add_people" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line2"
+        android:text="当前用户" />
+
+    <LinearLayout
+        android:id="@+id/passengerInfo"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView21"
+        android:layout_alignParentStart="true">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox2" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:layout_weight="0.28" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/HumanType"
+            android:layout_weight="0.55" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Id"
+            android:layout_weight="1.73" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/passengerList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/passengerInfo" />
+
+</RelativeLayout>

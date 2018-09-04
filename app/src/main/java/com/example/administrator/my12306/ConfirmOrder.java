@@ -13,29 +13,29 @@ public class ConfirmOrder extends AppCompatActivity {
 
     private TextView outDate, previous, nextDay, add;
     private TextView fromPort,toport;
-    private Button btnSubmit;
+    private Button btnCon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.confirm_order);
+        setContentView(R.layout.activity_confirm_order);
 
 //        outDate = (TextView) findViewById(R.id.tvOutDate);
 //        previous = (TextView) findViewById(R.id.tvPrevious);
 //        nextDay = (TextView) findViewById(R.id.tvNextDay);
-        add = findViewById(R.id.tv_Add);
-        btnSubmit = findViewById(R.id.btnSubmit);
+        add = findViewById(R.id.tvAdd);
+        btnCon = findViewById(R.id.btnCon);
         fromPort=findViewById(R.id.fromPort);
         toport=findViewById(R.id.toPort);
         Intent intent=getIntent();
-        fromPort.setText("jaa");
-        toport.setText("ss");
+        fromPort.setText(intent.getStringExtra("fromCity"));
+        toport.setText(intent.getStringExtra("toCity"));
 
 //        outDate.setOnClickListener(new actionListener());
 //        previous.setOnClickListener(new actionListener());
 //        nextDay.setOnClickListener(new actionListener());
         add.setOnClickListener(new actionListener());
-        btnSubmit.setOnClickListener(new actionListener());
+        btnCon.setOnClickListener(new actionListener());
 
     }
 
@@ -54,10 +54,10 @@ public class ConfirmOrder extends AppCompatActivity {
 //
 //                    break;
                 case R.id.tvAdd:
-                    Intent intentPsg = new Intent(ConfirmOrder.this, Passengers.class);
-                    startActivityForResult(intentPsg, 2);
+                    Intent intentPsg = new Intent(ConfirmOrder.this, AddPassengers.class);
+                    startActivityForResult(intentPsg,1);
                     break;
-                case R.id.btnSubmit:
+                case R.id.btnCon:
 //                    if (){
                     final AlertDialog.Builder builder = new AlertDialog.Builder(ConfirmOrder.this);
                     builder.setTitle("温馨提示");
