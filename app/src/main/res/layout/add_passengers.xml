@@ -54,39 +54,6 @@
         android:layout_height="wrap_content"
         android:text="当前用户" />
 
-    <LinearLayout
-        android:id="@+id/passengerInfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.28"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/HumanType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.55"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/Id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.73"
-            android:text="TextView" />
-    </LinearLayout>
-
     <ListView
         android:id="@+id/passengerList"
         android:layout_width="match_parent"

@@ -3,6 +3,10 @@ package com.example.administrator.my12306;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ListView;
@@ -16,14 +20,26 @@ public class AddPassengers extends AppCompatActivity {
     //private String[] list={"王二","张三","李四"};
     private List<Passenger> passengerList=new ArrayList<Passenger>();
     private TopBarForP topBarForP;
+    private ListView passengers;
+    private CheckBox cb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_passengers);
         initPassenger();
+
+        cb=LayoutInflater.from(AddPassengers.this).inflate(R.layout.passenger_info,null).findViewById(R.id.cb);
         PassengerAdapter adapter=new PassengerAdapter(AddPassengers.this,R.layout.passenger_info,passengerList);
-        ListView listView=(ListView)findViewById(R.id.passengerList);
-        listView.setAdapter(adapter);
+        passengers=findViewById(R.id.passengerList);
+        passengers.setAdapter(adapter);
+        passengers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                RecyclerView.ViewHolder holder= (RecyclerView.ViewHolder) view.getTag();
+                cb.toggle();
+                Toast.makeText(AddPassengers.this,"框被选择了",Toast.LENGTH_LONG).show();
+            }
+        });
         topBarForP=findViewById(R.id.topbarforp);
         topBarForP.setTitleTextView("添加乘客");
        topBarForP.setOnLeftAndRightClickListener(new TopBarForP.OnLeftAndRightClickListener() {
@@ -34,7 +50,7 @@ public class AddPassengers extends AppCompatActivity {
 
            @Override
            public void OnRightButtonClick() {
-                Toast.makeText(AddPassengers.this,"成功",Toast.LENGTH_LONG).show();
+
            }
        });
     }
