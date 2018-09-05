@@ -15,7 +15,7 @@ import com.example.administrator.my12306.R;
 
 public class TopBar extends RelativeLayout {
     private Button leftButton, rightButton;
-    private TextView titleTextView;
+    private TextView titleTextView,rightText;
     private OnLeftAndRightClickListener listener;//监听点击事件
     // 设置监听器
      public void setOnLeftAndRightClickListener(OnLeftAndRightClickListener listener) {

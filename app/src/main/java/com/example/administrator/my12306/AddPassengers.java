@@ -1,9 +1,12 @@
 package com.example.administrator.my12306;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +15,7 @@ public class AddPassengers extends AppCompatActivity {
     //private List passenger=new ArrayList();
     //private String[] list={"王二","张三","李四"};
     private List<Passenger> passengerList=new ArrayList<Passenger>();
-    private TopBar topBar;
+    private TopBarForP topBarForP;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,18 +24,19 @@ public class AddPassengers extends AppCompatActivity {
         PassengerAdapter adapter=new PassengerAdapter(AddPassengers.this,R.layout.passenger_info,passengerList);
         ListView listView=(ListView)findViewById(R.id.passengerList);
         listView.setAdapter(adapter);
-        topBar=findViewById(R.id.topbar);
-        topBar.setOnLeftAndRightClickListener(new TopBar.OnLeftAndRightClickListener() {
-            @Override
-            public void OnLeftButtonClick() {
-                finish();
-            }
+        topBarForP=findViewById(R.id.topbarforp);
+        topBarForP.setTitleTextView("添加乘客");
+       topBarForP.setOnLeftAndRightClickListener(new TopBarForP.OnLeftAndRightClickListener() {
+           @Override
+           public void OnLeftButtonClick() {
+               finish();
+           }
 
-            @Override
-            public void OnRightButtonClick() {
-
-            }
-        });
+           @Override
+           public void OnRightButtonClick() {
+                Toast.makeText(AddPassengers.this,"成功",Toast.LENGTH_LONG).show();
+           }
+       });
     }
 
     private void initPassenger() {

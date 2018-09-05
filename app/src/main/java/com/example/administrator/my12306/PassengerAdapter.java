@@ -31,13 +31,13 @@ public class PassengerAdapter extends ArrayAdapter{
 
         AddPassengers.Passenger passenger = (AddPassengers.Passenger) getItem(position);
         View view= LayoutInflater.from(getContext()).inflate(resourceId,null);
-        TextView name=(TextView)view.findViewById(R.id.name);
+        TextView name=view.findViewById(R.id.name);
         name.setText(passenger.getName());
 
-        TextView IdNumber=(TextView)view.findViewById(R.id.Id);
+        TextView IdNumber=view.findViewById(R.id.Id);
         IdNumber.setText(passenger.getIdNumber());
 
-        TextView HumanType=(TextView)view.findViewById(R.id.HumanType);
+        TextView HumanType=view.findViewById(R.id.HumanType);
         HumanType.setText(passenger.getHumanType());
         return view;
     }

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".order_ticket">
 
     <com.example.administrator.my12306.TopBar
@@ -18,21 +19,18 @@
 
     </com.example.administrator.my12306.TopBar>
 
-    <ListView
-        android:id="@+id/trianListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/order_time"
-        android:layout_centerHorizontal="true" />
-
     <TextView
         android:id="@+id/order_time"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/topbar"
+        android:background="#0033FF"
         android:gravity="center|center_horizontal"
-        android:textSize="18sp"
         android:textColor="#FFF"
-        android:background="#0033FF"/>
-</RelativeLayout>
+        android:textSize="18sp" />
+
+    <ListView
+        android:id="@+id/trianListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

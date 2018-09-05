@@ -6,4 +6,11 @@
     <attr name="titleTextSize" format="dimension" />
     <attr name="titleTextColor" format="color" />
 </declare-styleable>
+    <declare-styleable name="TopBarForP">
+        <attr name="leftBackbutton" format="reference"/>
+        <attr name="rightText" format="string"/>
+        <attr name="titleTextforp" format="string"/>
+        <attr name="titleTextSizeforp" format="dimension"/>
+        <attr name="titleTextColorforp" format="color"/>
+    </declare-styleable>
 </resources>

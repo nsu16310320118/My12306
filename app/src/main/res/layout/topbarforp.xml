@@ -15,11 +15,13 @@
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:gravity="center" />
-    <Button
-        android:id="@+id/rightButton"
+    <TextView
+        android:id="@+id/rightText"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginRight="5dp" />
+        android:layout_marginRight="5dp"
+        android:textColor="#FFF"
+        android:textSize="14sp"/>
 </RelativeLayout>
