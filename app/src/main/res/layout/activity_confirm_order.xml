@@ -107,13 +107,13 @@
 
 
     <Button
-        android:text="提交订单"
+        android:id="@+id/btnCon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvAdd"
-        android:layout_marginTop="13dp"
-        android:id="@+id/btnCon"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:text="提交订单"
         android:textSize="@dimen/textsize" />
 
     <TextView
@@ -148,19 +148,18 @@
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:text="添加乘客"
-        android:layout_width="match_parent"
-        android:paddingLeft="120dp"
-        android:layout_height="wrap_content"
         android:id="@+id/tvAdd"
-
-        android:textSize="@dimen/titlesize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnCon"
+        android:layout_centerHorizontal="true"
 
         android:drawableStart="@drawable/ic_control_point_black_24dp"
+
         android:gravity="left"
-        android:layout_marginTop="74dp"
-        android:layout_below="@+id/line2"
-        android:layout_alignParentStart="true" />
+        android:paddingLeft="120dp"
+        android:text="添加乘客"
+        android:textSize="@dimen/titlesize" />
 
     <TextView
         android:text="TextView"
@@ -195,5 +194,13 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="21dp"
         android:id="@+id/textView36" />
+
+    <ListView
+        android:id="@+id/passengers"
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="156dp" />
 
 </RelativeLayout>

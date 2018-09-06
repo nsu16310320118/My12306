@@ -18,8 +18,8 @@ public class Splash extends AppCompatActivity {
             public void run() {
                 try{
                     sleep(5000);
-                    Intent intent=new Intent(Splash.this,Login_Activity.class);
-                    startActivity(intent);
+//                    Intent intent=new Intent(Splash.this,Login_Activity.class);
+//                    startActivity(intent);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

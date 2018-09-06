@@ -6,14 +6,23 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConfirmOrder extends AppCompatActivity {
 
     private TextView outDate, previous, nextDay, add;
     private TextView fromPort,toport;
     private Button btnCon;
+    private ArrayList list;
+    private ListView passengers;
+    private ArrayAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +36,8 @@ public class ConfirmOrder extends AppCompatActivity {
         btnCon = findViewById(R.id.btnCon);
         fromPort=findViewById(R.id.fromPort);
         toport=findViewById(R.id.toPort);
+        list=new ArrayList();
+        passengers=findViewById(R.id.passengers);
         Intent intent=getIntent();
         fromPort.setText(intent.getStringExtra("fromCity"));
         toport.setText(intent.getStringExtra("toCity"));
@@ -58,7 +69,6 @@ public class ConfirmOrder extends AppCompatActivity {
                     startActivityForResult(intentPsg,1);
                     break;
                 case R.id.btnCon:
-//                    if (){
                     final AlertDialog.Builder builder = new AlertDialog.Builder(ConfirmOrder.this);
                     builder.setTitle("温馨提示");
                     builder.setMessage("请至少添加一位乘客").setPositiveButton("确定", new DialogInterface.OnClickListener() {
@@ -68,6 +78,18 @@ public class ConfirmOrder extends AppCompatActivity {
                         }
                     }).show();
                     break;
+            }
+        }
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case 0x101:{
+                list=data.getStringArrayListExtra("result");
+                adapter=new ArrayAdapter(ConfirmOrder.this,android.R.layout.simple_list_item_1,list);
+                passengers.setAdapter(adapter);
+                break;
             }
         }
     }

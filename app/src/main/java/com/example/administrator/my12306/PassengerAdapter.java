@@ -1,86 +1,85 @@
 package com.example.administrator.my12306;
 
-import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
+import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
+import java.util.Map;
 
-/**
- * Created by LD on 2018/9/4.
- */
+public class PassengerAdapter extends BaseAdapter {
+    AddPassengers.Passenger passenger;
+    private List<AddPassengers.Passenger>results;
+    private List<AddPassengers.Passenger>list;
+    private Context context;
 
-public class PassengerAdapter extends ArrayAdapter{
-    private int resourceId;
-    private LayoutInflater inflater=null;
-    private int temp=-1;
-    ViewHolder holder ;
-
-    public PassengerAdapter(@NonNull Context context, int resource, List<AddPassengers.Passenger> objects) {
-
-        super(context, resource,objects);
-        resourceId=resource;
-        inflater=LayoutInflater.from(context);
+    public PassengerAdapter(Context context, List<AddPassengers.Passenger> list, List<AddPassengers.Passenger> results){
+        this.context=context;
+        this.list=list;
+        this.results=results;
     }
 
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public int getCount() {
+        return list.size();
+    }
 
-        AddPassengers.Passenger passenger = (AddPassengers.Passenger) getItem(position);
-        View view= LayoutInflater.from(getContext()).inflate(resourceId,null);
-        TextView name=view.findViewById(R.id.name);
-        name.setText(passenger.getName());
+    @Override
+    public Object getItem(int position) {
+        return list.get(position);
+    }
 
-        TextView IdNumber=view.findViewById(R.id.Id);
-        IdNumber.setText(passenger.getIdNumber());
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-        TextView HumanType=view.findViewById(R.id.HumanType);
-        HumanType.setText(passenger.getHumanType());
-
-        holder=null;
-        if (holder==null){
+    @Override
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        passenger = (AddPassengers.Passenger) getItem(position);
+        ViewHolder holder=null;
+        if(convertView==null){
+            convertView= LayoutInflater.from(context).inflate(R.layout.passenger_info,null);
             holder=new ViewHolder();
-            convertView=inflater.inflate(R.layout.passenger_info,null);
-            holder.cb=convertView.findViewById(R.id.cb);
             convertView.setTag(holder);
-        }else {
-            holder= (ViewHolder) convertView.getTag();
+        }else{
+            holder=(ViewHolder) convertView.getTag();
         }
+        holder.checkBox=convertView.findViewById(R.id.cb);
+        holder.txtName=convertView.findViewById(R.id.name);
+        holder.humanType=convertView.findViewById(R.id.HumanType);
+        holder.txtId=convertView.findViewById(R.id.Id);
 
-        holder.cb.setId(position);
-        holder.cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        holder.txtName.setText(passenger.getName());
+        holder.humanType.setText(passenger.getHumanType());
+        holder.txtId.setText(passenger.getIdNumber());
+
+
+
+        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    if (temp!=-1){
-//                        CheckBox tempcb=
-                    }
+                    results.add(passenger);
+                }else{
+                    results.remove(passenger);
                 }
             }
         });
-
-        CheckBox cb=view.findViewById(R.id.cb);
-
-
-
-        return view;
+        return convertView;
     }
 
-    private class ViewHolder{
-        public CheckBox cb;
+    class ViewHolder {
+        CheckBox checkBox;
+        TextView txtName;
+        TextView txtId;
+        TextView humanType;
     }
 }
