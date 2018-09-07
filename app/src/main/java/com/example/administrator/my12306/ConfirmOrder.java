@@ -18,7 +18,7 @@ import java.util.List;
 public class ConfirmOrder extends AppCompatActivity {
 
     private TextView outDate, previous, nextDay, add;
-    private TextView fromPort,toport;
+    private TextView fromPort,toport,orderTime,trainNumber;
     private Button btnCon;
     private ArrayList list;
     private ListView passengers;
@@ -36,12 +36,15 @@ public class ConfirmOrder extends AppCompatActivity {
         btnCon = findViewById(R.id.btnCon);
         fromPort=findViewById(R.id.fromPort);
         toport=findViewById(R.id.toPort);
+        orderTime=findViewById(R.id.outTime);
+        trainNumber=findViewById(R.id.trainNumber_order);
         list=new ArrayList();
         passengers=findViewById(R.id.passengers);
         Intent intent=getIntent();
         fromPort.setText(intent.getStringExtra("fromCity"));
         toport.setText(intent.getStringExtra("toCity"));
-
+        orderTime.setText(intent.getStringExtra("goDate"));
+        trainNumber.setText(intent.getStringExtra("trainNumber"));
 //        outDate.setOnClickListener(new actionListener());
 //        previous.setOnClickListener(new actionListener());
 //        nextDay.setOnClickListener(new actionListener());
@@ -79,7 +82,13 @@ public class ConfirmOrder extends AppCompatActivity {
                         }
                     }).show();}
                     else{
-
+                            Intent payIntent=new Intent(ConfirmOrder.this,PayTicket.class);
+                            payIntent.putExtra("fromCity",fromPort.getText());
+                            payIntent.putExtra("toCity",toport.getText());
+                            payIntent.putExtra("goDate",orderTime.getText());
+                            payIntent.putExtra("result",list);
+                            payIntent.putExtra("trainNumber",trainNumber.getText());
+                            startActivity(payIntent);
                     }
                     break;
             }

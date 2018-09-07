@@ -3,7 +3,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/fromTime_pay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -12,32 +12,32 @@
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/fromCity_pay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView26"
-        android:layout_below="@+id/textView26"
+        android:layout_alignStart="@+id/fromTime_pay"
+        android:layout_below="@+id/fromTime_pay"
         android:layout_marginStart="33dp"
         android:layout_marginTop="40dp"
         android:text="TextView"
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/toCity_pay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView27"
-        android:layout_alignBottom="@+id/textView27"
+        android:layout_alignBaseline="@+id/fromCity_pay"
+        android:layout_alignBottom="@+id/fromCity_pay"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="36dp"
         android:text="TextView"
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/textView31"
+        android:id="@+id/trainNumber_pay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView26"
+        android:layout_below="@+id/fromTime_pay"
         android:layout_centerHorizontal="true"
         android:text="TextView" />
 
@@ -45,8 +45,8 @@
         android:id="@+id/imageView13"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView28"
-        android:layout_alignStart="@+id/textView31"/>
+        android:layout_alignBottom="@+id/toCity_pay"
+        android:layout_alignStart="@+id/trainNumber_pay"/>
         <!--app:srcCompat="@drawable/long_arrows" />-->
 
     <TextView
@@ -58,7 +58,7 @@
         android:text="TextView" />
 
     <ListView
-        android:id="@+id/passenger"
+        android:id="@+id/passenger_pay"
         android:layout_width="match_parent"
         android:layout_height="124dp"
         android:layout_alignParentStart="true"
@@ -69,8 +69,8 @@
         android:id="@+id/textView37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView26"
-        android:layout_below="@+id/passenger"
+        android:layout_alignStart="@+id/fromTime_pay"
+        android:layout_below="@+id/passenger_pay"
         android:text="TextView" />
 
     <TextView
@@ -119,7 +119,7 @@
         android:id="@+id/imageView14"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_below="@+id/textView31"
+        android:layout_below="@+id/trainNumber_pay"
         android:layout_centerHorizontal="true"/>
 
     <Button

@@ -63,7 +63,8 @@
         <activity android:name=".order_ticket"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
-        <activity android:name=".ConfirmOrder"/>
+        <activity android:name=".ConfirmOrder"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>>
         <activity android:name=".AddPassengers"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".PayTicket"/>

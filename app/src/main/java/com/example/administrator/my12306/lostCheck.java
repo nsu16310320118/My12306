@@ -14,7 +14,7 @@ private Button upload;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lost_check);
-        passenger=findViewById(R.id.passenger);
+        passenger=findViewById(R.id.passenger_pay);
         takeMes=findViewById(R.id.takeMes);
         gender=findViewById(R.id.gender);
         phoneNumber=findViewById(R.id.phoneNumber_lost);

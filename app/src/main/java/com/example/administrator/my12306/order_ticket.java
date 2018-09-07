@@ -42,6 +42,8 @@ public class order_ticket extends AppCompatActivity {
                 Intent intent=new Intent(order_ticket.this,ConfirmOrder.class);
                 intent.putExtra("fromCity",fromCity);
                 intent.putExtra("toCity",toCity);
+                intent.putExtra("goDate",goDate);
+                intent.putExtra("trainNumber",trainNumber.get(i).getNumber());
                 startActivity(intent);
                 //把点击的车次传送过去
             }

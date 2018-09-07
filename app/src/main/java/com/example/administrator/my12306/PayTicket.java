@@ -1,26 +1,46 @@
 package com.example.administrator.my12306;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class PayTicket extends AppCompatActivity {
-
+    private ListView passengers;
     private Button btnPay, btnIn, btnFan, btnSend, btnCan;
+    private TextView fromCity,toCity,goTime,trainNumber;
+    private ArrayList list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pay_ticket);
-
-        btnPay = (Button) findViewById(R.id.btnPay);
-        btnIn = (Button) findViewById(R.id.btnIn);
-        btnFan = (Button) findViewById(R.id.btnFan);
-        btnSend = (Button) findViewById(R.id.btnSend);
-        btnCan = (Button) findViewById(R.id.btnCan);
+        Intent payIntent=getIntent();
+        fromCity=findViewById(R.id.fromCity_pay);
+        fromCity.setText(payIntent.getStringExtra("fromCity"));
+        toCity=findViewById(R.id.toCity_pay);
+        toCity.setText(payIntent.getStringExtra("toCity"));
+        goTime=findViewById(R.id.fromTime_pay);
+        goTime.setText(payIntent.getStringExtra("goDate"));
+        passengers=findViewById(R.id.passenger_pay);
+        list=payIntent.getStringArrayListExtra("result");
+        ArrayAdapter adapter=new ArrayAdapter(PayTicket.this,android.R.layout.simple_list_item_1,list);
+        passengers.setAdapter(adapter);
+        trainNumber=findViewById(R.id.trainNumber_pay);
+        trainNumber.setText(payIntent.getStringExtra("trainNumber"));
+        btnPay = findViewById(R.id.btnPay);
+        btnIn = findViewById(R.id.btnIn);
+        btnFan =  findViewById(R.id.btnFan);
+        btnSend = findViewById(R.id.btnSend);
+        btnCan = findViewById(R.id.btnCan);
 
         btnPay.setOnClickListener(new btnListener());
         btnIn.setOnClickListener(new btnListener());

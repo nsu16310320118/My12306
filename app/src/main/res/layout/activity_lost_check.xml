@@ -25,7 +25,7 @@
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/passenger"
+                android:id="@+id/passenger_pay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
