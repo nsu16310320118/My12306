@@ -70,7 +70,7 @@ public class order_ticket extends AppCompatActivity {
         for (int i = 0; i < 10; i++) {
             number = new Number("G12" + i);
             trainNumber.add(number);
-            Log.i("NUM",Number.getNumber());
+            //Log.i("NUM",Number.getNumber());
         }
     }
 
@@ -82,14 +82,14 @@ public class order_ticket extends AppCompatActivity {
         return toCity;
     }
 
-    public static class Number {//车次类
-        private static String number;
+    public  class Number {//车次类
+        private  String number;
 
         public Number(String number) {
             this.number = number;
         }
 
-        public static String getNumber() {
+        public String getNumber() {
             return number;
         }
     }

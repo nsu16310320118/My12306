@@ -43,7 +43,8 @@ public class TopBarForP extends RelativeLayout {
         rightText= findViewById(R.id.rightText);
         titleTextView = findViewById(R.id.titleText);
         leftButton.setOnClickListener(new OnClickListener() { @Override public void onClick(View v) {
-            if (listener != null) { listener.OnLeftButtonClick();//点击回调
+            if (listener != null) {
+                listener.OnLeftButtonClick();//点击回调
             }
         }
         });

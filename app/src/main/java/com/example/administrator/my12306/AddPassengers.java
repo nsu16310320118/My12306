@@ -12,13 +12,14 @@ import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AddPassengers extends AppCompatActivity {
     //private List passenger=new ArrayList();
     //private String[] list={"王二","张三","李四"};
-    private List<Passenger> passengerList=new ArrayList<Passenger>();
+    private ArrayList passengerList=new ArrayList<Passenger>();
     private ArrayList result=new ArrayList<>();
     private TopBarForP topBarForP;
     private ListView passengers;

@@ -69,6 +69,7 @@ public class ConfirmOrder extends AppCompatActivity {
                     startActivityForResult(intentPsg,1);
                     break;
                 case R.id.btnCon:
+                    if(list.size()==0){
                     final AlertDialog.Builder builder = new AlertDialog.Builder(ConfirmOrder.this);
                     builder.setTitle("温馨提示");
                     builder.setMessage("请至少添加一位乘客").setPositiveButton("确定", new DialogInterface.OnClickListener() {
@@ -76,7 +77,10 @@ public class ConfirmOrder extends AppCompatActivity {
                         public void onClick(DialogInterface dialogInterface, int i) {
                             dialogInterface.dismiss();
                         }
-                    }).show();
+                    }).show();}
+                    else{
+
+                    }
                     break;
             }
         }
@@ -84,7 +88,7 @@ public class ConfirmOrder extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode){
+        switch (resultCode){
             case 0x101:{
                 list=data.getStringArrayListExtra("result");
                 adapter=new ArrayAdapter(ConfirmOrder.this,android.R.layout.simple_list_item_1,list);

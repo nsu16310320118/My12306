@@ -9,18 +9,19 @@ import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 
 public class PassengerAdapter extends BaseAdapter {
-    AddPassengers.Passenger passenger;
-    private List<AddPassengers.Passenger>results;
-    private List<AddPassengers.Passenger>list;
+
+    private ArrayList results;
+    private ArrayList list;
     private Context context;
 
-    public PassengerAdapter(Context context, List<AddPassengers.Passenger> list, List<AddPassengers.Passenger> results){
+    public PassengerAdapter(Context context, ArrayList list, ArrayList results){
         this.context=context;
         this.list=list;
         this.results=results;
@@ -33,7 +34,7 @@ public class PassengerAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return list.get(position);
+        return list.get(position);//得到list的某一项
     }
 
     @Override
@@ -42,8 +43,8 @@ public class PassengerAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
-        passenger = (AddPassengers.Passenger) getItem(position);
+    public View getView(int position, View convertView, final ViewGroup parent) {
+        final AddPassengers.Passenger passenger= (AddPassengers.Passenger) getItem(position);
         ViewHolder holder=null;
         if(convertView==null){
             convertView= LayoutInflater.from(context).inflate(R.layout.passenger_info,null);
@@ -67,9 +68,9 @@ public class PassengerAdapter extends BaseAdapter {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    results.add(passenger);
+                    results.add(passenger.getName());
                 }else{
-                    results.remove(passenger);
+                    results.remove(passenger.getName());
                 }
             }
         });
