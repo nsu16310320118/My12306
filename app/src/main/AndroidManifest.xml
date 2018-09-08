@@ -12,10 +12,15 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Login_Activity"
-            android:label="登录" />
+            android:label="登录">
+        </activity>
         <activity
             android:name=".Register_Activity"
-            android:label="注册" />
+            android:label="注册" ><intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
         <activity
             android:name=".forgetPwd_Activity"
             android:label="忘记密码" />
@@ -24,11 +29,7 @@
             android:name=".MainActivity"
             android:label="车票预订"
             android:theme="@style/DefaultCityPickerTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".dataChoose"

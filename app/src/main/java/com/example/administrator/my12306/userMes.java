@@ -1,6 +1,9 @@
 package com.example.administrator.my12306;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -58,4 +61,26 @@ private Button exit;
             }
         }
     }
+
+    public static class NetUtils {
+        public static boolean check(Context context){
+                try {
+                    ConnectivityManager connectivity = (ConnectivityManager) context
+                            .getSystemService(CONNECTIVITY_SERVICE);
+                    if (connectivity != null) {
+                        // 获取网络连接管理的对象
+                        NetworkInfo info = connectivity.getActiveNetworkInfo();
+                        if (info != null && info.isConnected()) {
+                            // 判断当前网络是否已经连接
+                            if (info.getState() == NetworkInfo.State.CONNECTED) {
+                                return true;
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return false;
+            }
+        }
 }

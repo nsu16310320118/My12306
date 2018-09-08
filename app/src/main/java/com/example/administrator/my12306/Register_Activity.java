@@ -1,18 +1,23 @@
-package com.example.aurora.t12306;
+package com.example.administrator.my12306;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.icu.util.BuddhistCalendar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class Register_Activity extends AppCompatActivity {
@@ -23,6 +28,7 @@ private CheckBox agree;
 private Button next;
 private myDatabase db;
 private SQLiteDatabase mydatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,16 +63,6 @@ private SQLiteDatabase mydatabase;
                 tbuilder.show();
             }
         });
-
-        agree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //点击后跳转到用户守则界面，只用实现跳转，守则界面内容内容不实现
-                Intent intent =new Intent(Register_Activity.this,Login_Activity.class);
-                intent.putExtra("phone",phoneNumber.getText().toString());
-                startActivity(intent);
-            }
-        });
         type.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,72 +78,58 @@ private SQLiteDatabase mydatabase;
                 cbuilder.show();
             }
         });
+
+
         next.setOnClickListener(new View.OnClickListener() {
+            //点击按键以后，每一个框做自查
+            StringBuilder stringBuilder=new StringBuilder();
             @Override
             public void onClick(View view) {
-                //检查数据的类型，检查完成后将数据加入到数据库之中
-                final AlertDialog.Builder builder=new AlertDialog.Builder(Register_Activity.this);
-                builder.setTitle("温馨提示");
-                switch (view.getId()){
-                    case R.id.reUsername:
-                        String str="^[a-zA-Z][a-zA-Z0-9_]{5,30}$";
-                        Pattern pattern=Pattern.compile(str);
-                        if (!pattern.matcher(str).matches()){
-                            builder.setMessage("用户名只能填写字母下划线，开头必须为字母，且长度必须在6-30位内")；
-                        }
-                        break;
-                    case R.id.rePassword:
-                        String s="^\\w+$";
-                        Pattern p=Pattern.compile(s);
-                        if (!p.matcher(s).matches()){
-                            builder.setMessage("密码格式错误，必须且只能包含字母，数字，下划线中的两种或两种以上")；
-                            break;
-                        }
-                        if (rePassword.length()<6){
-                            builder.setMessage("密码不能少于6位");
-                        }
-                        break;
-                    case R.id.reCheckPassword:
-                        if (!rePassword.getText().toString().equals(reCheckPassword.getText().toString())){
-                            builder.setMessage("确认密码与密码不一致");
-                        }
-                        break;
-                    case R.id.reName:
-                        if (TextUtils.isEmpty(reName.getText().toString())){
-                            builder.setMessage("请正确输入姓名");
-                        }
-                        break;
-                    case R.id.phoneNumber:
-                        if (TextUtils.isEmpty(phoneNumber.getText().toString())){
-                            builder.setMessage("请输入手机号码");
-                            break;
-                        }
-                        if(phoneNumber.length()!=11){
-                            builder.setMessage("请输入正确的手机号码");
-                        }
-                        break;
-                    case R.id.IDNumber:
-                        if (TextUtils.isEmpty(IDNumber.getText().toString())){
-                            builder.setMessage("请输入身份证号码");
-                            break;
-                        }
-                        if(IDNumber.length()!=18){
-                            builder.setMessage("请正确输入18位的身份证号");
-                        }
-                        break;
-                    case R.id.agree:
-                        builder.setMessage("同意服务条款才能注册");
-                        break;
-                }
-                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                });
-                builder.show();
+                stringBuilder.delete(0,stringBuilder.length());
+                String str="^[a-zA-Z][a-zA-Z0-9_]{5,30}$";
 
-            }
-        });
+                if(TextUtils.isEmpty(rePassword.getText())){
+                    stringBuilder.append("请输入密码\n");
+                }
+                if(rePassword.getText().length()<6){
+                    stringBuilder.append("密码最少为6位\n");
+                }
+
+                if(!TextUtils.equals(rePassword.getText(),reCheckPassword.getText())||TextUtils.isEmpty(reCheckPassword.getText())||reCheckPassword.getText().length()<6){
+                    stringBuilder.append("重新输入密码错误\n");
+                }
+                 if(TextUtils.isEmpty(IDNumber.getText())){
+                     stringBuilder.append("请输入您的身份证号码\n");
+                 }
+                 if(TextUtils.isEmpty(phoneNumber.getText())){
+                     stringBuilder.append("请输入您的手机号码\n");
+                 }
+                 if(phoneNumber.getText().length()<18){
+                     stringBuilder.append("请输入正确的手机号\n");
+                 }
+                 if(TextUtils.isEmpty(email.getText())){
+                     stringBuilder.append("请输入您的电子邮箱号码\n");
+                 }
+                 if(!agree.isChecked()){
+                     stringBuilder.append("请阅读服务条款\n");
+                 }
+                 if(!TextUtils.isEmpty(stringBuilder.toString())){
+                     AlertDialog.Builder builder=new AlertDialog.Builder(Register_Activity.this);
+                     builder=new AlertDialog.Builder(Register_Activity.this);
+                     builder.setTitle("温馨提示");
+                     builder.setMessage(stringBuilder.toString());
+                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                         @Override
+                         public void onClick(DialogInterface dialogInterface, int i) {
+                             dialogInterface.dismiss();
+                         }
+                     });
+                     builder.show();
+                 }
+
+                 }
+        }
+        );
+
     }
 }
