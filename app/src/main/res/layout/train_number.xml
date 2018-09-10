@@ -16,7 +16,7 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/ticketNum"
+        android:id="@+id/busyNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/number"
@@ -26,7 +26,7 @@
         android:textSize="12sp" />
 
     <TextView
-        android:id="@+id/from_train_number"
+        android:id="@+id/fromCity_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/number"
@@ -39,17 +39,17 @@
         android:id="@+id/startTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/from_train_number"
-        android:layout_below="@+id/from_train_number"
+        android:layout_alignStart="@+id/fromCity_number"
+        android:layout_below="@+id/fromCity_number"
         android:text="12:20"
         android:textSize="12sp" />
 
     <TextView
-        android:id="@+id/end_train_number"
+        android:id="@+id/toCity_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/from_train_number"
-        android:layout_alignBottom="@+id/from_train_number"
+        android:layout_alignBaseline="@+id/fromCity_number"
+        android:layout_alignBottom="@+id/fromCity_number"
         android:layout_toStartOf="@+id/imageView5"
         android:text="上海"
         android:textSize="18sp" />
@@ -58,8 +58,8 @@
         android:id="@+id/endTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/end_train_number"
-        android:layout_below="@+id/end_train_number"
+        android:layout_alignStart="@+id/toCity_number"
+        android:layout_below="@+id/toCity_number"
         android:text="18:16"
         android:textSize="12sp" />
 
@@ -73,21 +73,21 @@
         app:srcCompat="@drawable/id_card" />
 
     <TextView
-        android:id="@+id/first"
+        android:id="@+id/firstNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/ticketNum"
-        android:layout_alignBottom="@+id/ticketNum"
+        android:layout_alignBaseline="@+id/busyNum"
+        android:layout_alignBottom="@+id/busyNum"
         android:layout_toStartOf="@+id/imageView8"
         android:text="一等：2张"
         android:textSize="12sp" />
 
     <TextView
-        android:id="@+id/second"
+        android:id="@+id/secondNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/first"
-        android:layout_alignBottom="@+id/first"
+        android:layout_alignBaseline="@+id/firstNum"
+        android:layout_alignBottom="@+id/firstNum"
         android:layout_toStartOf="@+id/endTime"
         android:text="二等：无"
         android:textSize="12sp" />
@@ -97,7 +97,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/end_train_number"
+        android:layout_below="@+id/toCity_number"
         android:layout_marginEnd="11dp"
         app:srcCompat="@drawable/down_arrows" />
 
@@ -115,7 +115,7 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignBottom="@+id/endTime"
-        android:layout_toStartOf="@+id/end_train_number"
+        android:layout_toStartOf="@+id/toCity_number"
         app:srcCompat="@drawable/end" />
 
     <ImageView
@@ -123,15 +123,15 @@
         android:layout_width="70dp"
         android:layout_height="20dp"
         android:layout_below="@+id/imageView4"
-        android:layout_toStartOf="@+id/second"
+        android:layout_toStartOf="@+id/secondNum"
         app:srcCompat="@drawable/long_arrows" />
 
     <TextView
-        android:id="@+id/time"
+        android:id="@+id/timeOnTrain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/imageView7"
-        android:layout_toEndOf="@+id/first"
+        android:layout_toEndOf="@+id/firstNum"
         android:text="5小时56分钟"
         android:textSize="12sp" />
 

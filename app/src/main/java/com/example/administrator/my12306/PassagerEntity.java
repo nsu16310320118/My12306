@@ -1,4 +1,4 @@
-package com.example.aurora.t12306;
+package com.example.administrator.my12306;
 
 public class PassagerEntity {
 

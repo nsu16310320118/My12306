@@ -148,7 +148,6 @@ public class Login_Activity extends AppCompatActivity {
 
                                                          //获取响应状态
                                                          int reponseCode = httpURLConnection.getResponseCode();
-                                                         System.out.print("相应代码："+""+reponseCode);
                                                          if (reponseCode == HttpURLConnection.HTTP_OK) {
                                                              //打开输入流
                                    /* StringBuilder sb = new StringBuilder();
