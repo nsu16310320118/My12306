@@ -6,17 +6,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MyDatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String TABLENAME="passager";
+    public static final String TABLENAME="info";
     public static final String CREATE_PSGS="create table "+TABLENAME+
             "(_id integer primary key autoincrement,"+"name text,"+
             "type text,"+"cardNo char(18))";
 
     private Context context;
 
-    public MyDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
-        this.context=context;
+    public MyDatabaseHelper(Context context) {
+        super(context, "passager.db", null, 1);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
@@ -25,7 +25,6 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLENAME);
-        onCreate(sqLiteDatabase);
+
     }
 }
