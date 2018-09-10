@@ -33,7 +33,6 @@ public class Login_Activity extends AppCompatActivity {
     private TextView forget;
     private Button login, register;
     private CheckBox remember;
-    private String userName, passWord;
     private myDatabase myDatabase;
     private SQLiteDatabase db;
     private Handler handler = new Handler() {
@@ -46,7 +45,8 @@ public class Login_Activity extends AppCompatActivity {
                     if (result == 0) {
                         textUserName.setError("用户名或者密码错误");
                         textUserName.requestFocus();
-                    } else if (result == 1) {
+                    }
+                    else if (result == 1) {
                         SharedPreferences preferences = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = preferences.edit();
                         if (remember.isChecked()) {
@@ -87,15 +87,13 @@ public class Login_Activity extends AppCompatActivity {
         forget = findViewById(R.id.forget);
         myDatabase = new myDatabase(this, "UserMessage.db", null, 1);
         db = myDatabase.getReadableDatabase();
-        userName = textUserName.getText().toString();
-        passWord = textPassword.getText().toString();
         //--------------------------
         forget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Login_Activity.this, forgetPwd_Activity.class);
-                if (!TextUtils.isEmpty(userName)) {
-                    intent.putExtra("username", userName);
+                if (!TextUtils.isEmpty(textUserName.getText().toString())) {
+                    intent.putExtra("username", textUserName.getText().toString());
                 } else {
                     intent.putExtra("username", "");
                 }
@@ -111,10 +109,10 @@ public class Login_Activity extends AppCompatActivity {
                                      @Override
                                      public void onClick(View view) {
                                          //跳转到主界面
-                                         if (TextUtils.isEmpty(userName)) {
+                                         if (TextUtils.isEmpty(textUserName.getText().toString())) {
                                              textUserName.setError("输入用户名为空");
                                              textUserName.requestFocus();
-                                         } else if (TextUtils.isEmpty(passWord)) {
+                                         } else if (TextUtils.isEmpty(textPassword.getText().toString())) {
                                              textPassword.setError("输入密码为空");
                                              textPassword.requestFocus();
                                          } else {
@@ -147,8 +145,10 @@ public class Login_Activity extends AppCompatActivity {
                                                          printWriter.write(params);
                                                          printWriter.flush();
                                                          printWriter.close();
+
                                                          //获取响应状态
                                                          int reponseCode = httpURLConnection.getResponseCode();
+                                                         System.out.print("相应代码："+""+reponseCode);
                                                          if (reponseCode == HttpURLConnection.HTTP_OK) {
                                                              //打开输入流
                                    /* StringBuilder sb = new StringBuilder();

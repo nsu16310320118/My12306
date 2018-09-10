@@ -93,7 +93,7 @@ private SQLiteDatabase mydatabase;
                 Matcher matcher=pattern.matcher(userMessage.getText().toString());
                 String string=matcher.replaceAll("").trim();
                 if(!userMessage.getText().toString().equals(string)){
-                    stringBuilder.append("您输入的名称不合法\n");
+                    stringBuilder.append("您输入的名称不合法\n");//用户名检测存在问题
                 }
                 String regexPwd="^\\w+$";
                 Pattern pwdpattern=Pattern.compile(regexPwd);
@@ -118,7 +118,7 @@ private SQLiteDatabase mydatabase;
                  if(TextUtils.isEmpty(phoneNumber.getText())){
                      stringBuilder.append("请输入您的手机号码\n");
                  }
-                 if(phoneNumber.getText().length()<18){
+                 if(phoneNumber.getText().length()!=11){
                      stringBuilder.append("请输入正确的手机号\n");
                  }
                  if(TextUtils.isEmpty(email.getText())){
