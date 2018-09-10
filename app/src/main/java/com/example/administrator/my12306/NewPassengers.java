@@ -1,4 +1,4 @@
-package com.example.aurora.t12306;
+package com.example.administrator.my12306;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
@@ -15,8 +15,9 @@ import android.widget.TextView;
 
 public class NewPassengers extends AppCompatActivity {
 
-    private TextView edtGender, edtBirthday, edtCountry, edtCardLei, edtTourLei;
+    private TextView edtName,edtGender, edtBirthday, edtCountry, edtCardLei, edtTourLei,edtcardNo;
     private int year, month, day;
+    private TopBarForP topBarForP;
 
     private DatePickerDialog.OnDateSetListener dateListener = new DatePickerDialog.OnDateSetListener() {
         @Override
@@ -38,13 +39,15 @@ public class NewPassengers extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_passengers);
-
-        edtGender = (TextView) findViewById(R.id.edtGender);
-        edtBirthday = (TextView) findViewById(R.id.edtBirthday);
-        edtCountry = (TextView) findViewById(R.id.edtCountry);
-        edtCardLei = (TextView) findViewById(R.id.edtCardLei);
-        edtTourLei = (TextView) findViewById(R.id.edtTourLei);
-
+        edtName=findViewById(R.id.edtPsgName);
+        edtGender =  findViewById(R.id.edtGender);
+        edtBirthday =  findViewById(R.id.edtBirthday);
+        edtCountry =  findViewById(R.id.edtCountry);
+        edtCardLei = findViewById(R.id.edtCardLei);
+        edtTourLei =  findViewById(R.id.edtTourLei);
+        edtcardNo=findViewById(R.id.edtcardNo);
+        topBarForP=findViewById(R.id.topbarforp);
+        topBarForP.setTitleTextView("新乘客");
         Calendar calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
@@ -56,6 +59,24 @@ public class NewPassengers extends AppCompatActivity {
         edtCountry.setOnClickListener(new dialogListener());
         edtCardLei.setOnClickListener(new dialogListener());
         edtTourLei.setOnClickListener(new dialogListener());
+        topBarForP.setOnLeftAndRightClickListener(new TopBarForP.OnLeftAndRightClickListener() {
+            @Override
+            public void OnLeftButtonClick() {
+                finish();
+            }
+
+            @Override
+            public void OnRightButtonClick() {
+                Intent newIntent=getIntent();
+                newIntent.putExtra("userName",edtName.getText().toString());
+                newIntent.putExtra("IDNumber",edtcardNo.getText().toString());
+                newIntent.putExtra("HumanType",edtTourLei.getText().toString());
+                int requestCode=0x102;
+                setResult(requestCode,newIntent);
+                finish();
+
+            }
+        });
 
     }
 

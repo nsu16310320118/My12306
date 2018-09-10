@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.icu.util.BuddhistCalendar;
+import android.os.UserManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Register_Activity extends AppCompatActivity {
@@ -87,7 +89,19 @@ private SQLiteDatabase mydatabase;
             public void onClick(View view) {
                 stringBuilder.delete(0,stringBuilder.length());
                 String str="^[a-zA-Z][a-zA-Z0-9_]{5,30}$";
-
+                Pattern pattern=Pattern.compile(str);
+                Matcher matcher=pattern.matcher(userMessage.getText().toString());
+                String string=matcher.replaceAll("").trim();
+                if(!userMessage.getText().toString().equals(string)){
+                    stringBuilder.append("您输入的名称不合法\n");
+                }
+                String regexPwd="^\\w+$";
+                Pattern pwdpattern=Pattern.compile(regexPwd);
+                Matcher pwdmatcher=pwdpattern.matcher(rePassword.getText().toString());
+                String pwdString=pwdmatcher.replaceAll("").trim();
+                if(!rePassword.getText().toString().equals(pwdString)){
+                    stringBuilder.append("密码内容不合法\n");
+                }
                 if(TextUtils.isEmpty(rePassword.getText())){
                     stringBuilder.append("请输入密码\n");
                 }

@@ -13,14 +13,15 @@
         <activity
             android:name=".Login_Activity"
             android:label="登录">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".Register_Activity"
-            android:label="注册" ><intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-
-        <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+            android:label="注册" ></activity>
         <activity
             android:name=".forgetPwd_Activity"
             android:label="忘记密码" />
@@ -67,10 +68,12 @@
         <activity android:name=".ConfirmOrder"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>>
         <activity android:name=".AddPassengers"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity android:name=".PayTicket"/>
         <activity android:name=".Country"/>
         <activity android:name=".Passengers" />
+        <activity android:name=".NewPassengers"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

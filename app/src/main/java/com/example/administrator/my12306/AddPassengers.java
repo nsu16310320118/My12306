@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -23,10 +24,12 @@ public class AddPassengers extends AppCompatActivity {
     private ArrayList result=new ArrayList<>();
     private TopBarForP topBarForP;
     private ListView passengers;
+    private ImageView addbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_passengers);
+        addbtn=findViewById(R.id.ibtnAdd);
         initPassenger();
         PassengerAdapter adapter=new PassengerAdapter(AddPassengers.this,passengerList,result);
         passengers=findViewById(R.id.passengerList);
@@ -45,6 +48,14 @@ public class AddPassengers extends AppCompatActivity {
                 intent.putExtra("result",result);
                 setResult(0x101,intent);
                 finish();
+           }
+       });
+       addbtn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+                Intent addIntent=new Intent(AddPassengers.this,NewPassengers.class);
+                int addrequestCode=0x102;
+                startActivityForResult(addIntent,addrequestCode);
            }
        });
     }
@@ -86,5 +97,15 @@ public class AddPassengers extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==0x102){
+           String newName=data.getStringExtra("userName");
+           String newHumanType=data.getStringExtra("HumanType");
+           String newIDNumber=data.getStringExtra("IDNumber");
+           Passenger newPassenger=new Passenger(newName,newHumanType,newIDNumber);
+           passengerList.add(newPassenger);
+        }
+    }
 }
