@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.administrator.my12306">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
@@ -15,22 +17,17 @@
         <activity
             android:name=".Login_Activity"
             android:label="登录">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Register_Activity"
-            android:label="注册" ></activity>
+            android:label="注册" />
         <activity
             android:name=".forgetPwd_Activity"
             android:label="忘记密码" />
         <activity
             android:name=".MainActivity"
             android:label="车票预订"
-            android:theme="@style/DefaultCityPickerTheme">
-        </activity>
+            android:theme="@style/DefaultCityPickerTheme" />
         <activity
             android:name=".dataChoose"
             android:label="选择日期" />
@@ -40,10 +37,12 @@
         <activity
             android:name=".historyOrder"
             android:label="历史订单" />
-        <activity android:name=".unGo"
-            android:label="未完成订单"/>
-        <activity android:name=".userMes"
-            android:label="用户信息"/>
+        <activity
+            android:name=".unGo"
+            android:label="未完成订单" />
+        <activity
+            android:name=".userMes"
+            android:label="用户信息" />
         <activity android:name=".phoneCheck" />
         <activity android:name=".myinsurance" />
         <activity android:name=".Travel_guide" />
@@ -63,18 +62,29 @@
         <activity android:name=".lostCheck" />
         <activity android:name=".advise" />
         <activity android:name=".DateActivity" />
-        <activity android:name=".order_ticket"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
-        <activity android:name=".ConfirmOrder"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>>
-        <activity android:name=".AddPassengers"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".PayTicket"/>
-        <activity android:name=".Country"/>
+        <activity
+            android:name=".order_ticket"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ConfirmOrder"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        >
+        <activity
+            android:name=".AddPassengers"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".PayTicket" />
+        <activity android:name=".Country" />
         <activity android:name=".Passengers" />
-        <activity android:name=".NewPassengers"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".NewPassengers"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
