@@ -1,4 +1,4 @@
-package com.example.aurora.t12306;
+package com.example.administrator.my12306;
 
 /**
  * Created by Aurora on 2018/9/10.
@@ -13,7 +13,6 @@ public class PassagerInfo {
     public void setId(int id) {
         this.id = id;
     }
-
     private int id;
     private String name,type,cardNo;
 

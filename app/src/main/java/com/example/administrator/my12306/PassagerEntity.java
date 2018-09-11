@@ -1,9 +1,10 @@
-package com.example.aurora.t12306;
+package com.example.administrator.my12306;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import com.example.administrator.my12306.PassagerInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +12,10 @@ import java.util.List;
 public class PassagerEntity {
 
 
-    private MyDatabaseHelper helper;
+    private com.example.aurora.t12306.MyDatabaseHelper helper;
 
     public PassagerEntity(Context context) {
-        helper = new MyDatabaseHelper(context);
+        helper = new com.example.aurora.t12306.MyDatabaseHelper(context);
     }
 
     public void add(String name, String type, String cardNo) {

@@ -49,7 +49,6 @@ public class ConfirmOrder extends AppCompatActivity {
         trainNumber.setText(intent.getStringExtra("trainNumber"));
         outTime.setText(intent.getStringExtra("goTime"));
         arriveTime.setText(intent.getStringExtra("endTime"));
-
 //        outDate.setOnClickListener(new actionListener());
 //        previous.setOnClickListener(new actionListener());
 //        nextDay.setOnClickListener(new actionListener());

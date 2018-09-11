@@ -36,7 +36,6 @@ public class order_ticket extends AppCompatActivity {
     private static String fromCity, toCity, goDate;
     private TrainListAdapter adapter;
     private List<TrainInfo> trainNumber = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -62,7 +61,7 @@ public class order_ticket extends AppCompatActivity {
         goDate = intent.getStringExtra("goDate");
         topBar.setTitleTextView(fromCity + "->" + toCity);
         orderTime.setText(goDate);
-        //将消息发送给服务器,服务器返回查询结果，生成列表显示
+                    //将消息发送给服务器,服务器返回查询结果，生成列表显示
         new Thread(){
             public void run(){
                 URL url= null;
@@ -77,7 +76,6 @@ public class order_ticket extends AppCompatActivity {
                     //设置允许输入输出
                     connection.setDoInput(true);
                     connection.setDoOutput(true);
-
                     //获取httpUrlConnection的输出流
                     PrintWriter printWriter = new PrintWriter( connection.getOutputStream());
                     String params = "fromStationName="+fromCity
@@ -128,13 +126,6 @@ public class order_ticket extends AppCompatActivity {
             }
         }.start();
     }
-    public static String getFromCity() {
-        return fromCity;
-    }
-
-    public static String getToCity() {
-        return toCity;
-    }
     public List<TrainInfo> orginJson(String json) {//JSON解析
         List<TrainInfo> list = new ArrayList<TrainInfo>();
         JSONArray object = null;
@@ -156,4 +147,6 @@ public class order_ticket extends AppCompatActivity {
         }
         return list;
     }
+
 }
+

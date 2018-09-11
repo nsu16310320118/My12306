@@ -93,7 +93,7 @@ public class PayTicket extends AppCompatActivity {
                             setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            finish();
+                                finish();
                         }
                     }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
                         @Override
