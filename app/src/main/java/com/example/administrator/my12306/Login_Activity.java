@@ -8,12 +8,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Xml;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +37,8 @@ public class Login_Activity extends AppCompatActivity {
     private CheckBox remember;
     private myDatabase myDatabase;
     private SQLiteDatabase db;
+    private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -85,9 +89,18 @@ public class Login_Activity extends AppCompatActivity {
         register = findViewById(R.id.register);
         remember = findViewById(R.id.remember);
         forget = findViewById(R.id.forget);
+        pref= PreferenceManager.getDefaultSharedPreferences(this);
         myDatabase = new myDatabase(this, "UserMessage.db", null, 1);
         db = myDatabase.getReadableDatabase();
         //--------------------------
+        boolean isRemenber=pref.getBoolean("remember_password",false);
+        if(isRemenber){
+            String account=pref.getString("account","");
+            String password=pref.getString("password","");
+            textUserName.setText(account);
+            textPassword.setText(password);
+            remember.setChecked(true);
+        }
         forget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,14 +113,22 @@ public class Login_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });//跳转到忘记密码界面
-
         login.setOnClickListener(new View.OnClickListener() {
                                      boolean isin = false;
-
-                                     //            private String strUserName=textUserName.getText().toString();
-//            private String strPassWord=textPassword.getText().toString();
                                      @Override
                                      public void onClick(View view) {
+                                         if(remember.isChecked()) {//点击后存
+                                             String userName = textUserName.getText().toString();
+                                             String passWord = textPassword.getText().toString();
+                                             editor = pref.edit();
+                                             editor.putBoolean("remember_password",true);
+                                             editor.putString("account", userName);
+                                             editor.putString("password", passWord);
+                                         }
+                                         else {
+                                             editor.clear();
+                                         }
+                                         editor.apply();
                                          //跳转到主界面
                                          if (TextUtils.isEmpty(textUserName.getText().toString())) {
                                              textUserName.setError("输入用户名为空");
@@ -116,8 +137,6 @@ public class Login_Activity extends AppCompatActivity {
                                              textPassword.setError("输入密码为空");
                                              textPassword.requestFocus();
                                          } else {
-//                    Intent intent = new Intent(Login_Activity.this, MainActivity.class);
-//                    startActivity(intent);
                                              if (!userMes.NetUtils.check(Login_Activity.this)) {
                                                  Toast.makeText(Login_Activity.this, "网络异常，请检查", Toast.LENGTH_LONG).show();
                                                  return;
@@ -232,8 +251,6 @@ public class Login_Activity extends AppCompatActivity {
 
         });
     }
-
-
     public boolean ifitInDB(String strUserName, String strPassWord) {
         boolean flag = false;
         String name = strUserName;

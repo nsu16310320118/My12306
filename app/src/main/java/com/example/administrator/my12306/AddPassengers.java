@@ -1,9 +1,12 @@
 package com.example.administrator.my12306;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,13 +16,24 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.io.Serializable;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 public class AddPassengers extends AppCompatActivity {
-    //private List passenger=new ArrayList();
-    //private String[] list={"王二","张三","李四"};
     private ArrayList passengerList=new ArrayList<Passenger>();
     private ArrayList result=new ArrayList<>();
     private TopBarForP topBarForP;
@@ -30,10 +44,8 @@ public class AddPassengers extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_passengers);
         addbtn=findViewById(R.id.ibtnAdd);
-        initPassenger();
-        PassengerAdapter adapter=new PassengerAdapter(AddPassengers.this,passengerList,result);
         passengers=findViewById(R.id.passengerList);
-        passengers.setAdapter(adapter);
+
         topBarForP=findViewById(R.id.topbarforp);
         topBarForP.setTitleTextView("添加乘客");
        topBarForP.setOnLeftAndRightClickListener(new TopBarForP.OnLeftAndRightClickListener() {
@@ -58,54 +70,63 @@ public class AddPassengers extends AppCompatActivity {
                 startActivityForResult(addIntent,addrequestCode);
            }
        });
+        new Thread(){
+            public void run(){
+                URL url= null;
+                try {
+                    url = new URL(CONSTANT.HOST+"/otn/PassengerList");
+                    HttpURLConnection connection=(HttpURLConnection) url.openConnection();
+                    connection.setRequestMethod("POST");//设置请求方法
+                    SharedPreferences preferences=AddPassengers.this.getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+                    connection.setRequestProperty("cookie",preferences.getString("cookie",""));
+                    connection.setConnectTimeout(CONSTANT.REQUEST_TIMEOUT);//设置连接超时
+                    connection.setReadTimeout(CONSTANT.SO_TIMEOUT);//设置读取超时
+                    //设置允许输入输出
+                    connection.setDoInput(true);
+                    connection.setDoOutput(true);
+                    //获取httpUrlConnection的输出流
+                    //获取响应状态
+                    int reponseCode = connection.getResponseCode();
+                    if(reponseCode == HttpURLConnection.HTTP_OK){
+                        //打开输入流
+                        StringBuilder sb = new StringBuilder();
+                        String line = "";
+                        BufferedReader bufferedReader = new BufferedReader(
+                                new InputStreamReader(connection.getInputStream()));
+                        while ((line = bufferedReader.readLine())!=null){
+                            sb.append(line).append("\n");
+                        }
+                        System.out.println("服务器返回的信息："+sb.toString());
+                        bufferedReader.close();
+                        passengerList= (ArrayList) orginJson(sb.toString());
+                    }else {
+                        System.out.println("服务器返回的信息出错："+connection.getResponseCode());
+                    }
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                PassengerAdapter adapter=new PassengerAdapter(AddPassengers.this,passengerList,result);
+                passengers.setAdapter(adapter);
+            }
+        }.start();
     }
-
-    private void initPassenger() {
-        Passenger wanger=new Passenger("王二","成人","2222****2222");
-        passengerList.add(wanger);
-
-        Passenger zhangsan=new Passenger("张三","学生","3333****3333");
-        passengerList.add(zhangsan);
-
-        Passenger lisi=new Passenger("李四","成人","4444****4444");
-        passengerList.add(lisi);
+    public List<Passenger> orginJson(String json) {//JSON解析
+        List<Passenger> list = new ArrayList<Passenger>();
+        Passenger passenger;
+        JSONArray object = null;
+        try {
+            object = new JSONArray(json);
+            for (int i = 0; i < object.length(); i++) {
+                JSONObject jsonObject = (JSONObject) object.getJSONObject(i);
+                passenger=new Passenger(jsonObject.getString("id"),jsonObject.getString("name"),jsonObject.getString("idType"),jsonObject.getString("tel"),
+                        jsonObject.getString("type"));
+                list.add(passenger);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
-
-
-
-    public class Passenger{
-        private String name;
-        private String HumanType;
-        private String IdNumber;
-
-        public Passenger(String name, String HumanType, String IdNumber){
-            this.name=name;
-            this.IdNumber=IdNumber;
-            this.HumanType=HumanType;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getIdNumber() {
-            return IdNumber;
-        }
-
-        public String getHumanType() {
-            return HumanType;
-        }
     }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode==0x102){
-           String newName=data.getStringExtra("userName");
-           String newHumanType=data.getStringExtra("HumanType");
-           String newIDNumber=data.getStringExtra("IDNumber");
-           Passenger newPassenger=new Passenger(newName,newHumanType,newIDNumber);
-           passengerList.add(newPassenger);
-        }
-    }
-}

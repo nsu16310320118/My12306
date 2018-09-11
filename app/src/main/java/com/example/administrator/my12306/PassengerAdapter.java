@@ -20,13 +20,14 @@ public class PassengerAdapter extends BaseAdapter {
     private ArrayList results;
     private ArrayList list;
     private Context context;
+    private int resourceId;
+    private List<Passenger> object;
 
     public PassengerAdapter(Context context, ArrayList list, ArrayList results){
         this.context=context;
         this.list=list;
         this.results=results;
     }
-
     @Override
     public int getCount() {
         return list.size();
@@ -44,7 +45,7 @@ public class PassengerAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, final ViewGroup parent) {
-        final AddPassengers.Passenger passenger= (AddPassengers.Passenger) getItem(position);
+        final Passenger passenger= (Passenger) getItem(position);
         ViewHolder holder=null;
         if(convertView==null){
             convertView= LayoutInflater.from(context).inflate(R.layout.passenger_info,null);
@@ -61,8 +62,6 @@ public class PassengerAdapter extends BaseAdapter {
         holder.txtName.setText(passenger.getName());
         holder.humanType.setText(passenger.getHumanType());
         holder.txtId.setText(passenger.getIdNumber());
-
-
 
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

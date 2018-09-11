@@ -1,15 +1,17 @@
 package com.example.administrator.my12306;
 
-/**
- * Created by LD on 2018/9/10.
- */
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.List;
 
 public class TrainInfo {
 
     String trainNo,fromCity,toCity,startTime,arriveTime,durationTime;
+    HashMap map;
 
-    public TrainInfo(String trainNo,String fromCity,String toCity,String startTime,
-                     String arriveTime,String durationTime){//String trainNo,String fromCity,String toCity,String startTime,
+    public TrainInfo(String trainNo, String fromCity, String toCity, String startTime,
+                     String arriveTime, String durationTime, HashMap map){//String trainNo,String fromCity,String toCity,String startTime,
             //String arriveTime,String durationTime
 
         this.trainNo=trainNo;
@@ -18,6 +20,7 @@ public class TrainInfo {
         this.startTime=startTime;
         this.arriveTime=arriveTime;
         this.durationTime=durationTime;
+        this.map=map;
     }
 
     public TrainInfo(){
@@ -70,5 +73,10 @@ public class TrainInfo {
 
     public void setDurationTime(String durationTime) {
         this.durationTime = durationTime;
+    }
+
+    public HashMap getMap() {return map;}
+
+    public void setMap(HashMap map) {this.map = map;
     }
 }

@@ -27,6 +27,8 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 public class order_ticket extends AppCompatActivity {
@@ -140,6 +142,22 @@ public class order_ticket extends AppCompatActivity {
                 trainInfo.setStartTime(jsonObject.getString("startTime"));
                 trainInfo.setArriveTime(jsonObject.getString("arriveTime"));
                 trainInfo.setDurationTime(jsonObject.getString("durationTime"));
+
+                JSONObject seatObject= (JSONObject) jsonObject.get("seats");//得到了seats这个大对象
+                    List<JSONObject> seatList=new ArrayList();//定义一个json对象，保存每一个席次信息
+                Iterator iterator=seatObject.keys();
+              int j=0;
+                HashMap map=new HashMap();
+              while(iterator.hasNext()&&j<4){
+                  String key=iterator.next().toString();
+                  JSONObject seat=seatObject.getJSONObject(key);
+
+                  map.put("seatName"+j,seat.get("seatName").toString()+":");
+                  map.put("seatNum"+j,seat.get("seatNum").toString()+"张");
+                  map.put("seatPrice"+j,"元"+seat.get("seatPrice").toString());
+                  j++;
+              }
+              trainInfo.setMap(map);
                 list.add(trainInfo);
             }
         } catch (JSONException e) {

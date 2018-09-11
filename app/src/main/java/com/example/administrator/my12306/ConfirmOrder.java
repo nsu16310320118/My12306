@@ -18,11 +18,12 @@ import java.util.List;
 public class ConfirmOrder extends AppCompatActivity {
 
     private TextView outDate, previous, nextDay, add;
-    private TextView fromPort,toport,orderTime,trainNumber,outTime,arriveTime;
+    private TextView fromPort,toport,orderTime,trainNumber,outTime,arriveTime,time_confirm;
     private Button btnCon;
     private ArrayList list;
     private ListView passengers;
     private ArrayAdapter adapter;
+    private TopBarForP topBarForP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,8 @@ public class ConfirmOrder extends AppCompatActivity {
 //        outDate = (TextView) findViewById(R.id.tvOutDate);
 //        previous = (TextView) findViewById(R.id.tvPrevious);
 //        nextDay = (TextView) findViewById(R.id.tvNextDay);
+        topBarForP=findViewById(R.id.topbarforp);
+        time_confirm=findViewById(R.id.time_confirm);
         add = findViewById(R.id.tvAdd);
         btnCon = findViewById(R.id.btnCon);
         fromPort=findViewById(R.id.fromPort);
@@ -45,7 +48,7 @@ public class ConfirmOrder extends AppCompatActivity {
         Intent intent=getIntent();
         fromPort.setText(intent.getStringExtra("fromCity"));
         toport.setText(intent.getStringExtra("toCity"));
-        orderTime.setText(intent.getStringExtra("goDate"));
+        time_confirm.setText(intent.getStringExtra("goDate"));
         trainNumber.setText(intent.getStringExtra("trainNumber"));
         outTime.setText(intent.getStringExtra("goTime"));
         arriveTime.setText(intent.getStringExtra("endTime"));
