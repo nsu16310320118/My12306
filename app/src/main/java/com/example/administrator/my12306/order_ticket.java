@@ -38,7 +38,7 @@ public class order_ticket extends AppCompatActivity {
     private List<TrainInfo> trainNumber = new ArrayList<>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_ticket);
         LayoutInflater factory = LayoutInflater.from(order_ticket.this);

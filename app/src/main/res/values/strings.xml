@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">T12306</string>
+    <string name="app_name">My12306</string>
     <string name="user_name">请输入用户名</string>
     <string name="pwd_name">请输入密码</string>
     <string name="btnLogin_name">登录</string>
