@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/startDate"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="11dp"
+        android:text="startDate" />
+
+    <TextView
+        android:id="@+id/fromCity"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/startDate"
+        android:layout_marginStart="25dp"
+        android:layout_toEndOf="@+id/startDate"
+        android:text="fromCity" />
+
+    <TextView
+        android:id="@+id/startTime"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/fromCity"
+        android:layout_alignBottom="@+id/fromCity"
+        android:layout_toEndOf="@+id/fromCity"
+        android:text="startTime" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/startTime"
+        android:layout_toEndOf="@+id/startTime"
+        app:srcCompat="@drawable/ic_arrow_forward" />
+
+    <TextView
+        android:id="@+id/toCity"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_above="@+id/carriageNo"
+        android:layout_toEndOf="@+id/imageView16"
+        android:text="toCity" />
+
+    <TextView
+        android:id="@+id/arriveTime"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/toCity"
+        android:layout_alignBottom="@+id/toCity"
+        android:layout_toEndOf="@+id/toCity"
+        android:text="arriveTime" />
+
+    <TextView
+        android:id="@+id/trainNo"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/startDate"
+        android:text="trainNo" />
+
+    <TextView
+        android:id="@+id/seatType"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignStart="@+id/fromCity"
+        android:layout_alignTop="@+id/trainNo"
+        android:text="seatType" />
+
+    <TextView
+        android:id="@+id/carriageNo"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_below="@+id/imageView16"
+        android:layout_toEndOf="@+id/imageView16"
+        android:text="carriageNo" />
+
+    <TextView
+        android:id="@+id/seatNo"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_above="@+id/peopleType"
+        android:layout_marginStart="21dp"
+        android:layout_toEndOf="@+id/peopleType"
+        android:text="seatNo" />
+
+    <TextView
+        android:id="@+id/paserName"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/trainNo"
+        android:text="paserName" />
+
+    <TextView
+        android:id="@+id/IdType"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignStart="@+id/seatType"
+        android:layout_below="@+id/seatType"
+        android:text="IdType" />
+
+    <TextView
+        android:id="@+id/peopleType"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignStart="@+id/carriageNo"
+        android:layout_below="@+id/carriageNo"
+        android:text="peopleType" />
+
+    <TextView
+        android:id="@+id/ticketPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignStart="@+id/seatNo"
+        android:layout_below="@+id/seatNo"
+        android:text="ticketPrice" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/paserName"
+        android:text="车票状态：" />
+
+    <TextView
+        android:id="@+id/ticketType"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignStart="@+id/IdType"
+        android:layout_below="@+id/IdType"
+        android:text="ticketType" />
+
+</RelativeLayout>
