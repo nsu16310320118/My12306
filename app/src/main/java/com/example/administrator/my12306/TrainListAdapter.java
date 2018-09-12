@@ -18,8 +18,7 @@ import java.util.List;
 public class TrainListAdapter extends ArrayAdapter{
     private int resourceId;
     private List<TrainInfo> NUM;
-    private TextView trainNo,fromCity,toCity,startTime,arriveTime,
-            durationTime,busyNum,firstNum,secondNum;
+    private TextView trainNo,fromCity,toCity,startTime,arriveTime,bestNum,betterNum,goodNum;
 
     public TrainListAdapter(@NonNull Context context, int resource, List<TrainInfo> objects){
         super(context, resource,objects);
@@ -38,11 +37,20 @@ public class TrainListAdapter extends ArrayAdapter{
         toCity=view.findViewById(R.id.endCity);
          startTime=view.findViewById(R.id.startTime);
          arriveTime=view.findViewById(R.id.endTime);
+         bestNum=view.findViewById(R.id.bestNum);
+         betterNum=view.findViewById(R.id.betterNum);
+         goodNum=view.findViewById(R.id.goodNum);
          trainNo.setText(trainInfo.getTrainNo());
          fromCity.setText(trainInfo.getFromCity());
          toCity.setText(trainInfo.getToCity());
          startTime.setText(trainInfo.getStartTime());
         arriveTime.setText(trainInfo.getArriveTime());
+        String best=trainInfo.getMap().get("seatName0")+":"+trainInfo.getMap().get("seatNum0");
+        bestNum.setText(best);
+        String better=trainInfo.getMap().get("seatName1")+":"+trainInfo.getMap().get("seatNum1");
+        betterNum.setText(better);
+        String good=trainInfo.getMap().get("seatName2")+":"+trainInfo.getMap().get("seatNum2");
+        goodNum.setText(good);
         return view;
     }
 }

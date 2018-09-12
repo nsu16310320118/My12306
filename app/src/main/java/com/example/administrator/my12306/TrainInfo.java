@@ -77,6 +77,5 @@ public class TrainInfo {
 
     public HashMap getMap() {return map;}
 
-    public void setMap(HashMap map) {this.map = map;
-    }
+    public void setMap(HashMap map) {this.map = map;}
 }

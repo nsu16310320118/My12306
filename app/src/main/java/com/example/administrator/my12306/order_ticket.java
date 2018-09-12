@@ -121,6 +121,11 @@ public class order_ticket extends AppCompatActivity {
                         intent.putExtra("trainNumber",trainNumber.get(i).trainNo);
                         intent.putExtra("goTime",trainNumber.get(i).startTime);
                         intent.putExtra("endTime",trainNumber.get(i).arriveTime);
+                        SerializableHashMap myMap=new SerializableHashMap();
+                        myMap.setMap(trainNumber.get(i).getMap());//将hashmap数据添加到封装的myMap中
+                        Bundle bundle=new Bundle();
+                        bundle.putSerializable("hashMap", myMap);
+                        intent.putExtras(bundle);;
                         startActivity(intent);
                         //把点击的车次传送过去
                     }
@@ -152,9 +157,9 @@ public class order_ticket extends AppCompatActivity {
                   String key=iterator.next().toString();
                   JSONObject seat=seatObject.getJSONObject(key);
 
-                  map.put("seatName"+j,seat.get("seatName").toString()+":");
+                  map.put("seatName"+j,seat.get("seatName").toString()+"");
                   map.put("seatNum"+j,seat.get("seatNum").toString()+"张");
-                  map.put("seatPrice"+j,"元"+seat.get("seatPrice").toString());
+                  map.put("seatPrice"+j,seat.get("seatPrice").toString()+"元");
                   j++;
               }
               trainInfo.setMap(map);

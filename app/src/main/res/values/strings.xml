@@ -69,5 +69,8 @@
     <string name="orderInquiry">订单查询</string>
     <string name="service">商旅服务</string>
     <string name="mine">我的12306</string>
+    <drawable name="color1">#fff</drawable>
+    <drawable name="color2">#0033FF</drawable>
+    <drawable name="color3">#0033CC</drawable>
 
 </resources>

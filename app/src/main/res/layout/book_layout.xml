@@ -18,8 +18,9 @@
         android:id="@+id/goodserviceImage"
         android:layout_width="78dp"
         android:layout_height="69dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/travelImage"
+        android:layout_marginStart="116dp"
         app:srcCompat="@drawable/goodserve" />
 
     <ImageView
@@ -83,7 +84,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/GoDate"
         android:gravity="center"
-        android:text="TextView" />
+        android:text="00:00-24:00" />
 
     <TextView
         android:id="@+id/seat"
@@ -92,7 +93,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView9"
         android:gravity="center"
-        android:text="二等座" />
+        android:text="不限" />
 
     <CheckBox
         android:id="@+id/student"

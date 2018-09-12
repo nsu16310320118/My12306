@@ -1,8 +1,4 @@
-package com.example.aurora.lista;
-
-/**
- * Created by Aurora on 2018/9/11.
- */
+package com.example.administrator.my12306;
 
 public class Order {
 

@@ -16,7 +16,7 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/busyNum"
+        android:id="@+id/bestNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/number"
@@ -67,27 +67,27 @@
         android:id="@+id/imageView4"
         android:layout_width="30dp"
         android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/imageView8"
-        android:layout_marginStart="17dp"
+        android:layout_marginEnd="158dp"
         app:srcCompat="@drawable/id_card" />
 
     <TextView
-        android:id="@+id/firstNum"
+        android:id="@+id/betterNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/busyNum"
-        android:layout_alignBottom="@+id/busyNum"
+        android:layout_alignBaseline="@+id/bestNum"
+        android:layout_alignBottom="@+id/bestNum"
         android:layout_toStartOf="@+id/imageView8"
         android:text="一等：2张"
         android:textSize="12sp" />
 
     <TextView
-        android:id="@+id/secondNum"
+        android:id="@+id/goodNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/firstNum"
-        android:layout_alignBottom="@+id/firstNum"
+        android:layout_alignBaseline="@+id/betterNum"
+        android:layout_alignBottom="@+id/betterNum"
         android:layout_toStartOf="@+id/endTime"
         android:text="二等：无"
         android:textSize="12sp" />
@@ -120,19 +120,11 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="70dp"
+        android:layout_width="83dp"
         android:layout_height="20dp"
-        android:layout_below="@+id/imageView4"
-        android:layout_toStartOf="@+id/secondNum"
+        android:layout_alignBottom="@+id/number"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="127dp"
         app:srcCompat="@drawable/long_arrows" />
-
-    <TextView
-        android:id="@+id/timeOnTrain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView7"
-        android:layout_toEndOf="@+id/firstNum"
-        android:text="5小时56分钟"
-        android:textSize="12sp" />
 
 </RelativeLayout>

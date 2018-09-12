@@ -1,5 +1,4 @@
-package com.example.aurora.lista;
-
+package com.example.administrator.my12306;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -45,18 +44,16 @@ public class OrderAdapter extends BaseAdapter {
         if (view == null) {
             view = inflater.inflate(R.layout.info, viewGroup, false);
             holder = new viewHolder();
-            holder.orderInfo = (TextView) view.findViewById(R.id.orderInfo);
-            holder.orderName = (TextView) view.findViewById(R.id.orderName);
-            holder.orderDate = (TextView) view.findViewById(R.id.orderDate);
-            holder.orderCity = (TextView) view.findViewById(R.id.orderCity);
-            holder.goDate = (TextView) view.findViewById(R.id.goDate);
+            holder.orderInfo =  view.findViewById(R.id.orderInfo);
+            holder.orderName = view.findViewById(R.id.orderName);
+            holder.orderDate =  view.findViewById(R.id.orderDate);
+            holder.orderCity =  view.findViewById(R.id.orderCity);
+            holder.goDate = view.findViewById(R.id.goDate);
             view.setTag(holder);
         }else {
             holder= (viewHolder) view.getTag();
         }
-
         Order order=orders.get(i);
-
         holder.orderInfo.setText(order.getOrderNo());
         holder.orderName.setText(order.getName());
         holder.orderDate.setText(order.getBuydate());

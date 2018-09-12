@@ -1,6 +1,7 @@
 package com.example.administrator.my12306;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,19 +24,35 @@ import java.util.List;
 
 public class usually extends AppCompatActivity {
 private ListView listView;
-private ArrayAdapter myadapter;
+private usualaAdapter usualaAdapter;
 private List<Passenger> list;
+private TopBarForP topBarForP;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usually);
         //从数据库中调取该账号使用过的乘客名单
+        topBarForP=findViewById(R.id.topbarforp);
+        topBarForP.setOnLeftAndRightClickListener(new TopBarForP.OnLeftAndRightClickListener() {
+            @Override
+            public void OnLeftButtonClick() {
+                finish();
+            }
+
+            @Override
+            public void OnRightButtonClick() {
+                Intent addIntent=new Intent(usually.this,NewPassengers.class);
+                startActivity(addIntent);
+
+            }
+        });
+        topBarForP.setTitleTextView("常用联系人");
         listView=findViewById(R.id.listView);
         new Thread(){
             public void run(){
                 URL url= null;
                 try {
-                    url = new URL(CONSTANT.HOST+"/otn/PassengerList");
+                    url = new URL(CONSTANT.HOST+"/otn/TicketPassengerList");
                     HttpURLConnection connection=(HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("POST");//设置请求方法
                     SharedPreferences preferences=usually.this.getSharedPreferences("userinfo", Context.MODE_PRIVATE);
@@ -68,9 +85,9 @@ private List<Passenger> list;
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                    usualaAdapter=new usualaAdapter(usually.this,list);
+                    listView.setAdapter(usualaAdapter);
                 //已取得联系人信息，需要展示
-                myadapter=new ArrayAdapter(usually.this, R.layout.passenger_info,list);
-                listView.setAdapter(myadapter);
             }
         }.start();
     }

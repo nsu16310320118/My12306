@@ -13,17 +13,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class ConfirmOrder extends AppCompatActivity {
 
-    private TextView outDate, previous, nextDay, add;
+    private TextView bestPrice,betterPrice,goodPrice,wirstPrice,worsePrice,add;
     private TextView fromPort,toport,orderTime,trainNumber,outTime,arriveTime,time_confirm;
-    private Button btnCon;
+    private Button btnCon,btnBest,btnBetter,btnGood,btnWorst;
     private ArrayList list;
     private ListView passengers;
     private ArrayAdapter adapter;
     private TopBarForP topBarForP;
+    int size,flag=0;;
+    HashMap hashMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +46,23 @@ public class ConfirmOrder extends AppCompatActivity {
         trainNumber=findViewById(R.id.trainNumber_order);
         outTime=findViewById(R.id.outTime);
         arriveTime=findViewById(R.id.arriveTime);
+        btnBest=findViewById(R.id.btnBest);
+        btnBetter=findViewById(R.id.btnBetter);
+        btnGood=findViewById(R.id.btnGood);
+        btnWorst=findViewById(R.id.btnWorse);
         list=new ArrayList();
         passengers=findViewById(R.id.passengers);
+        topBarForP.setTitleTextView("确认订单");
+        topBarForP.setOnLeftAndRightClickListener(new TopBarForP.OnLeftAndRightClickListener() {
+            @Override
+            public void OnLeftButtonClick() {
+                finish();
+            }
+
+            @Override
+            public void OnRightButtonClick() {
+            }
+        });
         Intent intent=getIntent();
         fromPort.setText(intent.getStringExtra("fromCity"));
         toport.setText(intent.getStringExtra("toCity"));
@@ -52,6 +70,25 @@ public class ConfirmOrder extends AppCompatActivity {
         trainNumber.setText(intent.getStringExtra("trainNumber"));
         outTime.setText(intent.getStringExtra("goTime"));
         arriveTime.setText(intent.getStringExtra("endTime"));
+        Bundle bundle = getIntent().getExtras();
+        SerializableHashMap serializableHashMap = (SerializableHashMap) bundle.get("hashMap");
+        hashMap=serializableHashMap.getMap();
+        size=hashMap.size()/3;
+        String best=hashMap.get("seatName0")+"\n"+hashMap.get("seatPrice0");
+        btnBest.setText(best);
+        String better=hashMap.get("seatName1")+"\n"+hashMap.get("seatPrice1");
+        btnBetter.setText(better);
+        String good=hashMap.get("seatName2")+"\n"+hashMap.get("seatPrice2");
+        btnGood.setText(good);
+        if(size>=4){
+            String worse=hashMap.get("seatName3")+"\n"+hashMap.get("seatPrice3");
+            btnWorst.setText(worse);
+        }
+        else {
+            String str="无座"+"\n"+hashMap.get("seatPrice0");
+            btnWorst.setText(str);
+        }
+
 //        outDate.setOnClickListener(new actionListener());
 //        previous.setOnClickListener(new actionListener());
 //        nextDay.setOnClickListener(new actionListener());

@@ -1,4 +1,4 @@
-package com.example.aurora.lista;
+package com.example.administrator.my12306;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;

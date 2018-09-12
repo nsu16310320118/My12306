@@ -47,7 +47,8 @@
         <activity android:name=".myinsurance" />
         <activity android:name=".Travel_guide" />
         <activity android:name=".warmprompt" />
-        <activity android:name=".usually" />
+        <activity android:name=".usually"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".personal_data" />
         <activity android:name=".pwdChange" />
         <activity android:name=".mailChange" />

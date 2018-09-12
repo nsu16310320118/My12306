@@ -14,7 +14,7 @@ private String checkMes,newEmail,pwdCheck;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mail_change);
-//        email=findViewById(R.id.);
+        email=findViewById(R.id.email_change);
         password=findViewById(R.id.email_password);
         messageCheck=findViewById(R.id.messageCheck);
         messageButton=findViewById(R.id.messageButton);

@@ -74,7 +74,7 @@ public class AddPassengers extends AppCompatActivity {
             public void run(){
                 URL url= null;
                 try {
-                    url = new URL(CONSTANT.HOST+"/otn/PassengerList");
+                    url = new URL(CONSTANT.HOST+"/otn/TicketPassengerList");
                     HttpURLConnection connection=(HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("POST");//设置请求方法
                     SharedPreferences preferences=AddPassengers.this.getSharedPreferences("userinfo", Context.MODE_PRIVATE);

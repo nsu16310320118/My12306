@@ -28,7 +28,8 @@
         android:layout_alignParentStart="true"
         android:background="#0033FF"
         android:gravity="center"
-        android:text="TextView" />
+        android:textColor="#fff"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/outTime"
@@ -57,56 +58,56 @@
         android:layout_centerHorizontal="true"
         android:text="TextView" />
 
-    <TextView
-        android:id="@+id/lastTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView33"
-        android:layout_toEndOf="@+id/fromPort"
-        android:text="TextView" />
 
-    <LinearLayout
-        android:id="@+id/line2"
-        android:layout_width="match_parent"
+    <RadioGroup
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="151dp"
         android:orientation="horizontal">
 
-        <Button
+        <RadioButton
             android:id="@+id/btnBest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="商务座" />
+            android:button="@null"
+            android:text="RadioButton"
+            android:layout_gravity="center"
+            android:textSize="18sp" />
 
-        <Button
+        <RadioButton
             android:id="@+id/btnBetter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="一等座" />
+            android:button="@null"
+            android:text="RadioButton"
+            android:layout_gravity="center"
+            android:textSize="18sp" />
 
-        <Button
+        <RadioButton
             android:id="@+id/btnGood"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="二等座" />
+            android:button="@null"
+            android:text="RadioButton"
+            android:layout_gravity="center"
+            android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/btnWorst"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <RadioButton
+            android:id="@+id/btnWorse"
+            android:layout_width="115dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="无座" />
-    </LinearLayout>
-
+            android:button="@null"
+            android:text="RadioButton"
+            android:layout_gravity="center"
+            android:textSize="18sp" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/btnCon"
@@ -114,18 +115,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="111dp"
+        android:layout_marginBottom="164dp"
         android:text="提交订单"
         android:textSize="@dimen/textsize" />
 
-    <TextView
-        android:text="@string/fuwu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnCon"
-        android:layout_alignParentStart="true"
-        android:id="@+id/tvTip"
-        android:textSize="@dimen/textsize" />
 
     <TextView
         android:id="@+id/toPort"
@@ -151,40 +144,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
 
-        android:layout_below="@+id/passengers"
-        android:layout_marginTop="-188dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="210dp"
         android:drawableStart="@drawable/ic_control_point_black_24dp"
         android:gravity="left"
         android:paddingLeft="120dp"
         android:text="添加乘客"
         android:textSize="@dimen/titlesize" />
 
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/textView36"
-        android:layout_marginStart="17dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView36"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/passengers"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="12dp"
-        android:text="TextView" />
-
     <ListView
         android:id="@+id/passengers"
         android:layout_width="match_parent"
         android:layout_height="62dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="188dp" />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="195dp" />
 
 </RelativeLayout>
